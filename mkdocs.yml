@@ -1,0 +1,53 @@
+site_name: OpenSK USB Dongle
+
+theme:
+  name: material
+  features:
+    - instant
+    - tabs
+  palette:
+    scheme: default
+    primary: indigo
+    accent: indigo
+  logo: images/OpenSK.png
+  #favicon: images/OpenSK.png
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/FeitianTech
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/FEITIAN_Tech
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/feitian-technologies-co.-ltd./
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: false
+  - toc:
+      permalink: true
+  - footnotes
+  - meta
+  - def_list
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_png
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
+
+nav:
+  - Home: 'index.md'
+  - Hardware: 'hardware.md'
+  - Test FIDO: 'test.md'
+  - About: 'about.md'
+copyright: Copyright &copy; 2020 Feitian Technologies
