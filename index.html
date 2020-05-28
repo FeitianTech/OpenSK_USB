@@ -131,32 +131,6 @@
       
       
         
-          
-
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  <li class="md-tabs__item">
-    
-      <a href="." class="md-tabs__link md-tabs__link--active">
-        Home
-      </a>
-    
-  </li>
-
-      
-        
-      
-        
-      
-        
-      
-    </ul>
-  </div>
-</nav>
-        
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
@@ -260,33 +234,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#led-status" class="md-nav__link">
-    LED status
-  </a>
-  
-    <nav class="md-nav" aria-label="LED status">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#opensk-v1" class="md-nav__link">
-    OpenSK V1
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#opensk-v2" class="md-nav__link">
-    OpenSK V2
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#flashing-the-firmware" class="md-nav__link">
     Flashing the firmware
   </a>
@@ -318,8 +265,8 @@
 
 
   <li class="md-nav__item">
-    <a href="hardware/" title="Hardware" class="md-nav__link">
-      Hardware
+    <a href="test/" title="Test FIDO" class="md-nav__link">
+      Test FIDO
     </a>
   </li>
 
@@ -330,8 +277,8 @@
 
 
   <li class="md-nav__item">
-    <a href="test/" title="Test FIDO" class="md-nav__link">
-      Test FIDO
+    <a href="hardware/" title="Hardware" class="md-nav__link">
+      Hardware
     </a>
   </li>
 
@@ -416,33 +363,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#led-status" class="md-nav__link">
-    LED status
-  </a>
-  
-    <nav class="md-nav" aria-label="LED status">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#opensk-v1" class="md-nav__link">
-    OpenSK V1
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#opensk-v2" class="md-nav__link">
-    OpenSK V2
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#flashing-the-firmware" class="md-nav__link">
     Flashing the firmware
   </a>
@@ -479,8 +399,8 @@
                 
                 <h1 id="_1"><img alt="OpenSK logo" src="images/OpenSK.svg" width="200px"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="welcome-to-opensk-usb-dongle">Welcome to OpenSK USB Dongle<a class="headerlink" href="#welcome-to-opensk-usb-dongle" title="Permanent link">&para;</a></h2>
-<p>OpenSK was <a href="https://security.googleblog.com/2020/01/say-hello-to-opensk-fully-open-source.html" title="Say hello to OpenSK: a fully open-source security key implementation">announced</a> by Google at January 30, 2020. It is a fully open-source FIDO security key implementation, include hardware and software.<br />
-In this <a href="https://security.googleblog.com/2020/01/say-hello-to-opensk-fully-open-source.html" title="Say hello to OpenSK: a fully open-source security key implementation"><strong>announcement</strong></a>, Google said<br />
+<p>OpenSK was <a href="https://security.googleblog.com/2020/01/say-hello-to-opensk-fully-open-source.html" title="Say hello to OpenSK: a fully open-source security key implementation">announced</a> by Google at January 30, 2020. It is a fully open-source FIDO security key implementation, include hardware and software.  </p>
+<p>In that <a href="https://security.googleblog.com/2020/01/say-hello-to-opensk-fully-open-source.html" title="Say hello to OpenSK: a fully open-source security key implementation">announcement</a>, Google said<br />
 <div class="highlight"><pre><span></span><code>    By opening up OpenSK as a research platform, our hope is that 
     it will be used by researchers, security key manufacturers, 
     and enthusiasts to help develop innovative features and 
@@ -490,17 +410,19 @@ The firmware of OpenSK is developed in Rust and it implements both FIDO U2F and 
 <p>To help and accelerate FIDO security key adoption, FEITIAN improves the housing and makes new design of OpenSK USB Dongle, remove unused PCB components, public the design. Users can build firmware from source code of <a href="https://github.com/google/opensk" title="OpenSK">Google OpenSK github repository</a> without changing anything, provision it to this OpenSK hardware, to experence and try <a href="https://fidoalliance.org/" title="FIDO Alliance">FIDO</a> authentications.</p>
 <p>Before you try to program firmware to OpenSK, please read original <a href="https://github.com/google/OpenSK">OpenSK guide</a> at first. The following documents are most like additional remarks.</p>
 <h3 id="opensk-model">OpenSK Model<a class="headerlink" href="#opensk-model" title="Permanent link">&para;</a></h3>
-<p>We have two model of OpenSK USB Dongle, V1 and V2. They are designed according to <a href="https://www.nordicsemi.com/Software-and-tools/Development-Kits/nRF52840-Dongle">nRF52840 USB dongle</a>, which is used by Google OpenSK firmware. The difference between V1 and V2 is the method to Trigger DFU mode after connect it to USB port.   </p>
-<p>To OpenSK V1, user should insert a paper clip or a SIM-eject tool to the RESET button hole to switch it to DFU mode. This is similar as user push the RESET button on nRF52840 USB dongle.  </p>
-<p>To OpenSK V2, after user connect the device to computer, he should push and hold on the user button for more 8 seconds, then OpenSK will be in DFU mode.  </p>
+<p>We have two model of OpenSK USB Dongle, V1 and V2. They are designed according to <a href="https://www.nordicsemi.com/Software-and-tools/Development-Kits/nRF52840-Dongle">nRF52840 USB dongle</a>, which is used by Google OpenSK firmware. The difference between V1 and V2 is the method to enter bootloader mode.  </p>
+<p>To OpenSK V1, user should insert a paper clip or a SIM-eject tool to the RESET button hole to enter bootloader mode. This is similar as user push the RESET button on nRF52840 USB dongle.  </p>
+<p>To OpenSK V2, after user connect the device to computer, he should push and hold on the user button for more 8 seconds, then OpenSK will be in bootloader mode.  </p>
 <p>For detailed informations, please refer to <a href="hardware/">hardware description page</a>.</p>
 <h2 id="programming-firmware">Programming firmware<a class="headerlink" href="#programming-firmware" title="Permanent link">&para;</a></h2>
 <h3 id="pre-requisite">Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permanent link">&para;</a></h3>
 <ul>
 <li>The OpenSK USB Dongle V1 or V2.<br />
-Before you program the firmware to OpenSK USB Dongle, you should switch it to DFU mode. Please refer to <a href="hardware/">Harware Page</a> to learn how to switch OpenSK to DFU mode.</li>
+Before you program the firmware to OpenSK USB Dongle, you should switch it to bootloader mode. Please refer to <a href="hardware/">Harware Page</a> to learn how to switch OpenSK to bootloader mode.</li>
 <li>Read Original OpenSK guide.<br />
 Before you perform following opertaions, please read <a href="https://github.com/google/opensk">OpenSK</a> and its <a href="https://github.com/google/OpenSK/blob/master/docs/install.md">installation guide</a> to learn how to customize your security key, for example, to change the signature counter mechnisam and Attestation Certificate.</li>
+<li>Install <a href="https://pypi.org/project/nrfutil/">nrfutil</a> tool.<br />
+This tool allows you to directly flash firmware to OpenSK over USB without additional hardware.</li>
 </ul>
 <h3 id="develop-environment-and-configuration">Develop Environment and configuration<a class="headerlink" href="#develop-environment-and-configuration" title="Permanent link">&para;</a></h3>
 <ol>
@@ -508,13 +430,13 @@ Before you perform following opertaions, please read <a href="https://github.com
 You should prepare developing environment by yourself according to <a href="https://github.com/google/OpenSK/blob/master/docs/install.md#software">this section</a>.</li>
 <li>
 <p>Clone <a href="https://github.com/google/opensk" title="OpenSK">Google OpenSK github repository</a>.<br />
-    <div class="highlight"><pre><span></span><code>$ git clone --recursive https://github.com/google/OpenSK.git
+<div class="highlight"><pre><span></span><code>$ git clone --recursive https://github.com/google/OpenSK.git
 </code></pre></div></p>
 </li>
 <li>
 <p>Initial setup.<br />
 If you just cloned this repository, you need to run the following script:<br />
-    <div class="highlight"><pre><span></span><code>    $ ./setup.sh
+<div class="highlight"><pre><span></span><code>$ ./setup.sh
 </code></pre></div>
 For more information, please refer to <a href="https://github.com/google/OpenSK/blob/master/docs/install.md#initial-setup">Initial setup</a>.  </p>
 </li>
@@ -523,96 +445,30 @@ For more information, please refer to <a href="https://github.com/google/OpenSK/
 Please follow the description to change <a href="https://github.com/google/OpenSK/blob/master/docs/install.md#replacing-the-certificates">Attestation Certificate</a> as you want. If you are not familar with OpenSK and FIDO, we recommend you do not change anything.</p>
 </li>
 </ol>
-<h3 id="led-status">LED status<a class="headerlink" href="#led-status" title="Permanent link">&para;</a></h3>
-<p>The LEDs show different behaviour in DFU mode and working mode.</p>
-<h5 id="opensk-v1">OpenSK V1<a class="headerlink" href="#opensk-v1" title="Permanent link">&para;</a></h5>
-<table>
-<thead>
-<tr>
-<th align="left">LED behaviour</th>
-<th align="left">Mode type</th>
-<th align="left">Triger Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Blue LED is breathing</td>
-<td align="left">DFU mode</td>
-<td align="left">Use a paper clip or a SIM-eject tool to push RESET button in RESET button hole</td>
-</tr>
-<tr>
-<td align="left">Blue LED is flashing</td>
-<td align="left">DFU mode</td>
-<td align="left">Flashing the firmware</td>
-</tr>
-<tr>
-<td align="left">No LED on</td>
-<td align="left">Working mode</td>
-<td align="left">Idle</td>
-</tr>
-<tr>
-<td align="left">R/G/B LED is flashing</td>
-<td align="left">Working mode</td>
-<td align="left">Wait for user presence when receiving FIDO command</td>
-</tr>
-</tbody>
-</table>
-<h5 id="opensk-v2">OpenSK V2<a class="headerlink" href="#opensk-v2" title="Permanent link">&para;</a></h5>
-<table>
-<thead>
-<tr>
-<th align="left">LED behaviour</th>
-<th align="left">Mode type</th>
-<th align="left">Triger Method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Red LED is breathing</td>
-<td align="left">DFU mode</td>
-<td align="left">Use a paper clip or a SIM-eject tool to push RESET button in RESET button hole</td>
-</tr>
-<tr>
-<td align="left">Red LED is flashing</td>
-<td align="left">DFU mode</td>
-<td align="left">Flashing the firmware</td>
-</tr>
-<tr>
-<td align="left">No LED on</td>
-<td align="left">Working mode</td>
-<td align="left">Idle</td>
-</tr>
-<tr>
-<td align="left">R/G/B LED is flashing</td>
-<td align="left">Working mode</td>
-<td align="left">Wait for user presence when receiving FIDO command</td>
-</tr>
-</tbody>
-</table>
 <h3 id="flashing-the-firmware">Flashing the firmware<a class="headerlink" href="#flashing-the-firmware" title="Permanent link">&para;</a></h3>
 <p>Although you can download the firmware to our OpenSK V1 and V2 by using J-LINK as described in <a href="https://github.com/google/OpenSK/blob/master/docs/install.md">OpenSK installation guide</a>, we recommend you program the firmware through USB interface, it is more convenient.  </p>
 <ol>
-<li>Switch OpenSK to DFU mode.<br />
-Please refer to <a href=".#opensk-model">OpenSK Model</a> or <a href="hardware/">hardware description page</a> to learn how to switch OpenSK to DFU mode.<br />
-The LEDs show different behaviour in differet mode. Please refer to <a href="hardware/#LED">LED status</a> .</li>
+<li>Switch OpenSK to bootloader mode.<br />
+Please refer to <a href=".#opensk-model">OpenSK Model</a> or <a href="hardware/">hardware page</a> to learn how to switch OpenSK to bootloader mode.<br />
+The LEDs show different behaviour in differet mode. Please refer to <a href="hardware/">hardware page</a> to see LED status of OpenSK V1 and V2 .</li>
 <li>
 <p>Program the OpenSK USB dongle.<br />
-    <div class="highlight"><pre><span></span><code>$ ./deploy.py --board=nrf52840_dongle_dfu --opensk --programmer=nordicdfu
+<div class="highlight"><pre><span></span><code>$ ./deploy.py --board=nrf52840_dongle_dfu --opensk --programmer=nordicdfu
 </code></pre></div>
     When prompt <br />
-    <div class="highlight"><pre><span></span><code>Press [ENTER] when ready.  
+<div class="highlight"><pre><span></span><code>Press [ENTER] when ready.  
 </code></pre></div>
     Just press Enter, the firmware will be flahsed to your OpenSK USB Dongle.  </p>
 </li>
 <li>
 <p>Lock the working mode.<br />
-    <div class="highlight"><pre><span></span><code>$ ./deploy.py --board=nrf52840_dongle_dfu --programmer=nordicdfu --no-app --dont-clear-apps
+<div class="highlight"><pre><span></span><code>$ ./deploy.py --board=nrf52840_dongle_dfu --programmer=nordicdfu --no-app --dont-clear-apps
 </code></pre></div>
     When prompt <br />
-    <div class="highlight"><pre><span></span><code>Press [ENTER] when ready.  
+<div class="highlight"><pre><span></span><code>Press [ENTER] when ready.  
 </code></pre></div>
     Please press Enter and wait for the progress bar to be end.</p>
-<p>Without Step 3, your USB Dongle will return to DFU mode when you remove and reinsert it. This step just locks the working mode unless you do Step 1 to swith it to DFU mode again.</p>
+<p>Without Step 3, your USB Dongle will return to bootloader mode when you remove and reinsert it. This step just locks the working mode unless you do Step 1 to swith it to bootloader mode again.</p>
 </li>
 </ol>
 <div class="admonition note">
@@ -643,13 +499,13 @@ The LEDs show different behaviour in differet mode. Please refer to <a href="har
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
         
-          <a href="hardware/" title="Hardware" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="test/" title="Test FIDO" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Hardware
+                Test FIDO
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -717,7 +573,7 @@ The LEDs show different behaviour in differet mode. Please refer to <a href="har
       <script>
         app = initialize({
           base: ".",
-          features: ["instant", "tabs"],
+          features: ["instant"],
           search: Object.assign({
             worker: "assets/javascripts/worker/search.27c6a5e6.min.js"
           }, typeof search !== "undefined" && search)

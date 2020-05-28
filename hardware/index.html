@@ -131,32 +131,6 @@
       
       
         
-          
-
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  <li class="md-tabs__item">
-    
-      <a href=".." class="md-tabs__link md-tabs__link--active">
-        Home
-      </a>
-    
-  </li>
-
-      
-        
-      
-        
-      
-        
-      
-    </ul>
-  </div>
-</nav>
-        
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
@@ -185,6 +159,18 @@
   <li class="md-nav__item">
     <a href=".." title="Home" class="md-nav__link">
       Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../test/" title="Test FIDO" class="md-nav__link">
+      Test FIDO
     </a>
   </li>
 
@@ -230,16 +216,16 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#opensk-v1" class="md-nav__link">
-    OpenSK V1
+  <a href="#opensk-v2" class="md-nav__link">
+    OpenSK V2
   </a>
   
-    <nav class="md-nav" aria-label="OpenSK V1">
+    <nav class="md-nav" aria-label="OpenSK V2">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-switch-to-dfu-mode" class="md-nav__link">
-    1. Switch To DFU mode
+  <a href="#1-switch-to-bootloader-mode" class="md-nav__link">
+    1. Switch To bootloader mode
   </a>
   
 </li>
@@ -264,16 +250,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#opensk-v2" class="md-nav__link">
-    OpenSK V2
+  <a href="#opensk-v1" class="md-nav__link">
+    OpenSK V1
   </a>
   
-    <nav class="md-nav" aria-label="OpenSK V2">
+    <nav class="md-nav" aria-label="OpenSK V1">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-switch-to-dfu-mode_1" class="md-nav__link">
-    1. Switch To DFU mode
+  <a href="#1-switch-to-bootloader-mode_1" class="md-nav__link">
+    1. Switch To bootloader mode
   </a>
   
 </li>
@@ -281,6 +267,13 @@
           <li class="md-nav__item">
   <a href="#2-led-status_1" class="md-nav__link">
     2. LED status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-hardware_1" class="md-nav__link">
+    3. Hardware
   </a>
   
 </li>
@@ -294,18 +287,6 @@
   
 </nav>
     
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../test/" title="Test FIDO" class="md-nav__link">
-      Test FIDO
-    </a>
   </li>
 
     
@@ -347,16 +328,16 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#opensk-v1" class="md-nav__link">
-    OpenSK V1
+  <a href="#opensk-v2" class="md-nav__link">
+    OpenSK V2
   </a>
   
-    <nav class="md-nav" aria-label="OpenSK V1">
+    <nav class="md-nav" aria-label="OpenSK V2">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-switch-to-dfu-mode" class="md-nav__link">
-    1. Switch To DFU mode
+  <a href="#1-switch-to-bootloader-mode" class="md-nav__link">
+    1. Switch To bootloader mode
   </a>
   
 </li>
@@ -381,16 +362,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#opensk-v2" class="md-nav__link">
-    OpenSK V2
+  <a href="#opensk-v1" class="md-nav__link">
+    OpenSK V1
   </a>
   
-    <nav class="md-nav" aria-label="OpenSK V2">
+    <nav class="md-nav" aria-label="OpenSK V1">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-switch-to-dfu-mode_1" class="md-nav__link">
-    1. Switch To DFU mode
+  <a href="#1-switch-to-bootloader-mode_1" class="md-nav__link">
+    1. Switch To bootloader mode
   </a>
   
 </li>
@@ -398,6 +379,13 @@
           <li class="md-nav__item">
   <a href="#2-led-status_1" class="md-nav__link">
     2. LED status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-hardware_1" class="md-nav__link">
+    3. Hardware
   </a>
   
 </li>
@@ -424,16 +412,16 @@
                 
                 
                 <h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h1>
-<p>We have two types of OpenSK, V1 and V2.  They have almost same schematic but different casing.</p>
+<p>We have two types of OpenSK, V1 and V2.  They have almost same schematic but different casing.  </p>
 <hr />
-<h2 id="opensk-v1">OpenSK V1<a class="headerlink" href="#opensk-v1" title="Permanent link">&para;</a></h2>
-<p><img alt="OpenSK V1" src="../images/K46_with_label_reset.png" width="300px"></p>
-<h3 id="1-switch-to-dfu-mode">1. Switch To DFU mode<a class="headerlink" href="#1-switch-to-dfu-mode" title="Permanent link">&para;</a></h3>
-<p>After connect OpenSK to USB port, please insert a paper clip or a SIM-eject tool to the RESET button hole to switch it to DFU mode. This is similar as user push the RESET button on original nRF52840 USB dongle.  </p>
+<h2 id="opensk-v2">OpenSK V2<a class="headerlink" href="#opensk-v2" title="Permanent link">&para;</a></h2>
+<p><img alt="OpenSK V1" src="../images/G9_OpenSK_logo.png" width="400px"></p>
 <div class="admonition note">
 <p class="admonition-title">NOTE</p>
-<p>RESET button hole is covered by OpenSK label. So if you want to program the firmware occasionally, you can choose not to cover the label although we send the label to you together with OpenSK hardware.</p>
+<p>The LED and User button are together. The button material is transparent, so user can see LED light through the button.</p>
 </div>
+<h3 id="1-switch-to-bootloader-mode">1. Switch To bootloader mode<a class="headerlink" href="#1-switch-to-bootloader-mode" title="Permanent link">&para;</a></h3>
+<p>After user connects the device to computer, user should push and hold on the user button for more than 8 seconds, then OpenSK will be in bootloader mode.  </p>
 <h3 id="2-led-status">2. LED status<a class="headerlink" href="#2-led-status" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -445,13 +433,13 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">Blue LED is breathing</td>
-<td align="left">DFU mode</td>
+<td align="left">Red LED is breathing</td>
+<td align="left">bootloader mode</td>
 <td align="left">Use a paper clip or a SIM-eject tool to push RESET button in RESET button hole</td>
 </tr>
 <tr>
-<td align="left">Blue LED is flashing</td>
-<td align="left">DFU mode</td>
+<td align="left">Red LED is flashing</td>
+<td align="left">bootloader mode</td>
 <td align="left">Flashing the firmware</td>
 </tr>
 <tr>
@@ -467,16 +455,16 @@
 </tbody>
 </table>
 <h3 id="3-hardware">3. Hardware<a class="headerlink" href="#3-hardware" title="Permanent link">&para;</a></h3>
-<p>The hardawre schematic and PCB files can be downloaded <a href="../hardware_files/OpenSK_V1.zip">here</a>. </p>
+<p>The hardawre schematic and PCB are shared <a href="../hardware_files/OpenSK_V2.zip">here</a>. </p>
 <hr />
-<h2 id="opensk-v2">OpenSK V2<a class="headerlink" href="#opensk-v2" title="Permanent link">&para;</a></h2>
-<p><img alt="OpenSK V1" src="../images/G9_OpenSK_logo.png" width="400px"></p>
+<h2 id="opensk-v1">OpenSK V1<a class="headerlink" href="#opensk-v1" title="Permanent link">&para;</a></h2>
+<p><img alt="OpenSK V1" src="../images/K46_with_label_reset.png" width="300px"></p>
+<h3 id="1-switch-to-bootloader-mode_1">1. Switch To bootloader mode<a class="headerlink" href="#1-switch-to-bootloader-mode_1" title="Permanent link">&para;</a></h3>
+<p>After connect OpenSK to USB port, please insert a paper clip or a SIM-eject tool to the RESET button hole to switch it to bootloader mode. This is similar as user pushes the <a href="https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug_nrf52840_dongle%2FUG%2Fnrf52840_Dongle%2Fprogramming.html">RESET button</a> on original nRF52840 USB dongle.  </p>
 <div class="admonition note">
 <p class="admonition-title">NOTE</p>
-<p>The LED and User button are together. The button material is transparent, so user can see LED light through the button.</p>
+<p>RESET button hole is covered by OpenSK label. So if you want to program the firmware occasionally, you can choose not to cover the label although we send the label to you together with OpenSK hardware.</p>
 </div>
-<h3 id="1-switch-to-dfu-mode_1">1. Switch To DFU mode<a class="headerlink" href="#1-switch-to-dfu-mode_1" title="Permanent link">&para;</a></h3>
-<p>after user connect the device to computer, user should push and hold on the user button for more than 8 seconds, then OpenSK will be in DFU mode.  </p>
 <h3 id="2-led-status_1">2. LED status<a class="headerlink" href="#2-led-status_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -488,13 +476,13 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">Red LED is breathing</td>
-<td align="left">DFU mode</td>
+<td align="left">Blue LED is breathing</td>
+<td align="left">bootloader mode</td>
 <td align="left">Use a paper clip or a SIM-eject tool to push RESET button in RESET button hole</td>
 </tr>
 <tr>
-<td align="left">Red LED is flashing</td>
-<td align="left">DFU mode</td>
+<td align="left">Blue LED is flashing</td>
+<td align="left">bootloader mode</td>
 <td align="left">Flashing the firmware</td>
 </tr>
 <tr>
@@ -507,18 +495,10 @@
 <td align="left">Working mode</td>
 <td align="left">Wait for user presence when receiving FIDO command</td>
 </tr>
-<tr>
-<td align="left">### 3. Hardware</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">The hardawre schematic and PCB are shared <a href="../hardware_files/OpenSK_V2.zip">here</a>.</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
 </tbody>
 </table>
+<h3 id="3-hardware_1">3. Hardware<a class="headerlink" href="#3-hardware_1" title="Permanent link">&para;</a></h3>
+<p>The hardawre schematic and PCB files can be downloaded <a href="../hardware_files/OpenSK_V1.zip">here</a>. </p>
                 
               
               
@@ -537,7 +517,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href=".." title="Home" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../test/" title="Test FIDO" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -546,19 +526,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Home
+                Test FIDO
               </div>
             </div>
           </a>
         
         
-          <a href="../test/" title="Test FIDO" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../about/" title="About" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Test FIDO
+                About
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -626,7 +606,7 @@
       <script>
         app = initialize({
           base: "..",
-          features: ["instant", "tabs"],
+          features: ["instant"],
           search: Object.assign({
             worker: "../assets/javascripts/worker/search.27c6a5e6.min.js"
           }, typeof search !== "undefined" && search)

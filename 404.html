@@ -126,32 +126,6 @@
       
       
         
-          
-
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  <li class="md-tabs__item">
-    
-      <a href="/." class="md-tabs__link md-tabs__link--active">
-        Home
-      </a>
-    
-  </li>
-
-      
-        
-      
-        
-      
-        
-      
-    </ul>
-  </div>
-</nav>
-        
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
@@ -190,8 +164,8 @@
 
 
   <li class="md-nav__item">
-    <a href="/hardware/" title="Hardware" class="md-nav__link">
-      Hardware
+    <a href="/test/" title="Test FIDO" class="md-nav__link">
+      Test FIDO
     </a>
   </li>
 
@@ -202,8 +176,8 @@
 
 
   <li class="md-nav__item">
-    <a href="/test/" title="Test FIDO" class="md-nav__link">
-      Test FIDO
+    <a href="/hardware/" title="Hardware" class="md-nav__link">
+      Hardware
     </a>
   </li>
 
@@ -303,7 +277,7 @@
       <script>
         app = initialize({
           base: "/",
-          features: ["instant", "tabs"],
+          features: ["instant"],
           search: Object.assign({
             worker: "/assets/javascripts/worker/search.27c6a5e6.min.js"
           }, typeof search !== "undefined" && search)
