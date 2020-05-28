@@ -4,7 +4,6 @@ theme:
   name: material
   features:
     - instant
-    - tabs
   palette:
     scheme: default
     primary: indigo
@@ -47,7 +46,7 @@ markdown_extensions:
 
 nav:
   - Home: 'index.md'
-  - Hardware: 'hardware.md'
   - Test FIDO: 'test.md'
+  - Hardware: 'hardware.md'
   - About: 'about.md'
 copyright: Copyright &copy; 2020 Feitian Technologies
