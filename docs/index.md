@@ -21,7 +21,7 @@ We have two model of OpenSK USB Dongle, V1 and V2. They are designed according t
 
 To OpenSK V1, user should insert a paper clip or a SIM-eject tool to the RESET button hole to enter bootloader mode. This is similar as user push the RESET button on nRF52840 USB dongle.  
 
-To OpenSK V2, after user connect the device to computer, he should push and hold on the user button for more 8 seconds, then OpenSK will be in bootloader mode.  
+To OpenSK V2, after user connects the device to computer, he should push and hold on the user button for more 8 seconds, then OpenSK will be in bootloader mode.  
 
 For detailed informations, please refer to [hardware description page](./hardware.md).
 
