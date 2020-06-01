@@ -435,15 +435,15 @@ You should prepare developing environment by yourself according to <a href="http
 </li>
 <li>
 <p>Initial setup.<br />
-If you just cloned this repository, you need to run the following script:<br />
-<div class="highlight"><pre><span></span><code>$ ./setup.sh
+If you just cloned this repository, you need to run the following script:  </p>
+</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code>$ ./setup.sh
 </code></pre></div>
 For more information, please refer to <a href="https://github.com/google/OpenSK/blob/master/docs/install.md#initial-setup">Initial setup</a>.  </p>
-</li>
-<li>
-<p>Configure the OpenSK security parameter.<br />
-Please follow the description to change <a href="https://github.com/google/OpenSK/blob/master/docs/install.md#replacing-the-certificates">Attestation Certificate</a> as you want. If you are not familar with OpenSK and FIDO, we recommend you do not change anything.</p>
-</li>
+<ol>
+<li>Configure the OpenSK security parameter.<br />
+Please follow the description to change <a href="https://github.com/google/OpenSK/blob/master/docs/install.md#replacing-the-certificates">Attestation Certificate</a> as you want. If you are not familar with OpenSK and FIDO, we recommend you do not change anything.</li>
 </ol>
 <h3 id="flashing-the-firmware">Flashing the firmware<a class="headerlink" href="#flashing-the-firmware" title="Permanent link">&para;</a></h3>
 <p>Although you can download the firmware to our OpenSK V1 and V2 by using J-LINK as described in <a href="https://github.com/google/OpenSK/blob/master/docs/install.md">OpenSK installation guide</a>, we recommend you program the firmware through USB interface, it is more convenient.  </p>
@@ -458,23 +458,24 @@ The LEDs show different behaviour in differet mode. Please refer to <a href="har
     When prompt <br />
 <div class="highlight"><pre><span></span><code>Press [ENTER] when ready.  
 </code></pre></div>
-    Just press Enter, the firmware will be flahsed to your OpenSK USB Dongle.  </p>
+    Just press Enter, the firmware will be flahsed to your OpenSK USB Dongle.    </p>
+<p>When progress bar reaches 100%, OpenSK USB Dongle will be in working mode, but once you remove and insert it to USB port again, it will be in DFU mode again. So please perform following Step 3 and Step 4 to lock the working mode.</p>
 </li>
 <li>
-<p>Lock the working mode.<br />
+<p>Switch OpenSK to bootloader mode again.</p>
+</li>
+<li>Lock the working mode.<br />
 <div class="highlight"><pre><span></span><code>$ ./deploy.py --board=nrf52840_dongle_dfu --programmer=nordicdfu --no-app --dont-clear-apps
 </code></pre></div>
     When prompt <br />
 <div class="highlight"><pre><span></span><code>Press [ENTER] when ready.  
 </code></pre></div>
-    Please press Enter and wait for the progress bar to be end.</p>
-<p>Without Step 3, your USB Dongle will return to bootloader mode when you remove and reinsert it. This step just locks the working mode unless you do Step 1 to swith it to bootloader mode again.</p>
-</li>
+    Please press Enter and wait for the progress bar to be 100%.</li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">NOTE</p>
 <ol>
-<li>Step 2 and Step 3 are learned from <a href="https://github.com/google/OpenSK/issues/81" title="Flash USB dongle without additional hardware">this discussion</a>. The steps may change in the future.</li>
+<li>Step 3 and Step 4 are learned from <a href="https://github.com/google/OpenSK/issues/81" title="Flash USB dongle without additional hardware">this discussion</a>. The steps may change in the future.</li>
 <li>Above commands are examples on macOS. If you use Linux and Windows, there may be some difference.</li>
 </ol>
 </div>
