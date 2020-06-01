@@ -4,7 +4,9 @@ We have two types of OpenSK, V1 and V2.  They have almost same schematic but dif
 
 -----
 ## OpenSK V2
-<img alt="OpenSK V1" src="../images/G9_OpenSK_logo.png" width="400px">
+<img alt="OpenSK V1" src="../images/G9_OpenSK_logo.png" width="400px">  
+
+It has a metal housing with only one button in the aft area.  
 
 !!! note "NOTE"
     The LED and User button are together. The button material is transparent, so user can see LED light through the button.
@@ -25,7 +27,9 @@ The hardawre schematic and PCB are shared [here](hardware_files/OpenSK_V2.zip).
 
 -----
 ## OpenSK V1
-<img alt="OpenSK V1" src="../images/K46_with_label_reset.png" width="300px">
+<img alt="OpenSK V1" src="../images/K46_with_label_reset.png" width="300px">  
+
+It has a 3D-printed case with one user button and one RESET button.
 
 ### 1. Switch To bootloader mode
 After connect OpenSK to USB port, please insert a paper clip or a SIM-eject tool to the RESET button hole to switch it to bootloader mode. This is similar as user pushes the [RESET button](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug_nrf52840_dongle%2FUG%2Fnrf52840_Dongle%2Fprogramming.html) on original nRF52840 USB dongle.  

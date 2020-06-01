@@ -46,6 +46,7 @@ $ git clone --recursive https://github.com/google/OpenSK.git
 
 3. Initial setup.  
 If you just cloned this repository, you need to run the following script:  
+
 ``` 
 $ ./setup.sh
 ```  
@@ -70,9 +71,12 @@ $ ./deploy.py --board=nrf52840_dongle_dfu --opensk --programmer=nordicdfu
 ```
 Press [ENTER] when ready.  
 ```  
-    Just press Enter, the firmware will be flahsed to your OpenSK USB Dongle.  
+    Just press Enter, the firmware will be flahsed to your OpenSK USB Dongle.    
+    
+    When progress bar reaches 100%, OpenSK USB Dongle will be in working mode, but once you remove and insert it to USB port again, it will be in DFU mode again. So please perform following Step 3 and Step 4 to lock the working mode.
 
-3. Lock the working mode.  
+3. Switch OpenSK to bootloader mode again.
+4. Lock the working mode.  
 ```
 $ ./deploy.py --board=nrf52840_dongle_dfu --programmer=nordicdfu --no-app --dont-clear-apps
 ```  
@@ -80,12 +84,10 @@ $ ./deploy.py --board=nrf52840_dongle_dfu --programmer=nordicdfu --no-app --dont
 ```
 Press [ENTER] when ready.  
 ```  
-    Please press Enter and wait for the progress bar to be end.
-
-    Without Step 3, your USB Dongle will return to bootloader mode when you remove and reinsert it. This step just locks the working mode unless you do Step 1 to swith it to bootloader mode again.
+    Please press Enter and wait for the progress bar to be 100%.
 
 !!! note "NOTE"
-    1. Step 2 and Step 3 are learned from [this discussion](https://github.com/google/OpenSK/issues/81 "Flash USB dongle without additional hardware"). The steps may change in the future.
+    1. Step 3 and Step 4 are learned from [this discussion](https://github.com/google/OpenSK/issues/81 "Flash USB dongle without additional hardware"). The steps may change in the future.
     2. Above commands are examples on macOS. If you use Linux and Windows, there may be some difference.
 
 ### Test FIDO functions  
