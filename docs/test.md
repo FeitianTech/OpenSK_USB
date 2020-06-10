@@ -47,6 +47,7 @@ Here just emphasize services from two big FIDO players, Google and Microsoft.
 ### Others
 Surely there are a lot of other online services except for Google's and Microsoft's, you can learn from  
 - [FIDO2 Scenarios](https://download.ftsafe.com/files/FIDO/fido2/FEITIAN%20FIDO2%20scenarios%20instructions.pdf) and [U2F Scenarios](https://www.ftsafe.com/download/webdownload/FIDO/Manual/FEITIAN%20U2F%20scenarios%20instructions.pdf) from Feitian's resources.  
-- [Knowledge Base](https://xpass.freshdesk.com/support/solutions/60000318639) from Feitian
+- [Knowledge Base](https://xpass.freshdesk.com/support/solutions/60000318639) from Feitian  
+- [fido.ftsafe.com](https://fido.ftsafe.com/catalog/) Dedicated FIDO website from Feitian. Here you can find list of online services to use FIDO.
 
 
