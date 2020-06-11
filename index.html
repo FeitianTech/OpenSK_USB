@@ -459,26 +459,9 @@ The LEDs show different behaviour in differet mode. Please refer to <a href="har
 <div class="highlight"><pre><span></span><code>Press [ENTER] when ready.  
 </code></pre></div>
     Just press Enter, the firmware will be flahsed to your OpenSK USB Dongle.    </p>
-<p>When progress bar reaches 100%, OpenSK USB Dongle will be in working mode, but once you remove and insert it to USB port again, it will be in DFU mode again. So please perform following Step 3 and Step 4 to lock the working mode.</p>
+<p>When progress bar reaches 100%, OpenSK USB Dongle will be in working mode automatically. You can now test FIDO function.</p>
 </li>
-<li>
-<p>Switch OpenSK to bootloader mode again.</p>
-</li>
-<li>Lock the working mode.<br />
-<div class="highlight"><pre><span></span><code>$ ./deploy.py --board=nrf52840_dongle_dfu --programmer=nordicdfu --no-app --dont-clear-apps
-</code></pre></div>
-    When prompt <br />
-<div class="highlight"><pre><span></span><code>Press [ENTER] when ready.  
-</code></pre></div>
-    Please press Enter and wait for the progress bar to be 100%.</li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">NOTE</p>
-<ol>
-<li>Step 3 and Step 4 are learned from <a href="https://github.com/google/OpenSK/issues/81" title="Flash USB dongle without additional hardware">this discussion</a>. The steps may change in the future.</li>
-<li>Above commands are examples on macOS. If you use Linux and Windows, there may be some difference.</li>
-</ol>
-</div>
 <h3 id="test-fido-functions">Test FIDO functions<a class="headerlink" href="#test-fido-functions" title="Permanent link">&para;</a></h3>
 <p>Please refer to <a href="test/">Test Page</a>.  </p>
                 
