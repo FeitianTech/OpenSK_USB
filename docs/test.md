@@ -11,7 +11,7 @@ There are two ways to manage your OpenSK USB Dongle, include Reset, Set PIN and 
     2. **Security Key** option in **Windows Settings** is only available from Windows 10 1903. 
 
 ####Chrome Browser
-1. From Chrome browser, input **chrome://settings/securityKeys** to address bar and open it.  
+1. From Chrome browser, open URL **chrome://settings/securityKeys**, or open menu "Settings” => “Privacy and security” (More)=> “Manage security keys”.  
 2. You can see **Manage security keys** page, then you can do corresponding operations following the tips.
 
 !!! note "NOTE"

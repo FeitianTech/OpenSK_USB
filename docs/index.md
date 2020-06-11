@@ -73,22 +73,7 @@ Press [ENTER] when ready.
 ```  
     Just press Enter, the firmware will be flahsed to your OpenSK USB Dongle.    
     
-    When progress bar reaches 100%, OpenSK USB Dongle will be in working mode, but once you remove and insert it to USB port again, it will be in DFU mode again. So please perform following Step 3 and Step 4 to lock the working mode.
-
-3. Switch OpenSK to bootloader mode again.
-4. Lock the working mode.  
-```
-$ ./deploy.py --board=nrf52840_dongle_dfu --programmer=nordicdfu --no-app --dont-clear-apps
-```  
-    When prompt   
-```
-Press [ENTER] when ready.  
-```  
-    Please press Enter and wait for the progress bar to be 100%.
-
-!!! note "NOTE"
-    1. Step 3 and Step 4 are learned from [this discussion](https://github.com/google/OpenSK/issues/81 "Flash USB dongle without additional hardware"). The steps may change in the future.
-    2. Above commands are examples on macOS. If you use Linux and Windows, there may be some difference.
+    When progress bar reaches 100%, OpenSK USB Dongle will be in working mode automatically. You can now test FIDO function.
 
 ### Test FIDO functions  
 Please refer to [Test Page](./test.md).  
