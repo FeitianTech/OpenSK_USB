@@ -1,6 +1,7 @@
 # Overview
 
 We have two types of OpenSK, V1 and V2.  They have almost same schematic but different casing.  
+Currently only **V2** is available to the market.
 
 -----
 ## OpenSK V2
@@ -12,13 +13,13 @@ It has a metal housing with only one button in the aft area.
     The LED and User button are together. The button material is transparent, so user can see LED light through the button.
     
 ### 1. Switch To bootloader mode
-After user connects the device to computer, user should push and hold on the user button for more than 8 seconds, then OpenSK will be in bootloader mode.  
+After user connects the device to computer, **push and hold on** the user button for **more than 8** seconds and then release the button. If the red LED is breathing, OpenSK is in bootloader mode.  
 
 ### 2. LED status
 | LED behaviour |  Mode type | Triger Method |
 | :-- | :-- | :-- |
-| Red LED is breathing | bootloader mode | Use a paper clip or a SIM-eject tool to push RESET button in RESET button hole |
-| Red LED is flashing | bootloader mode | Flashing the firmware |
+| Red LED is breathing | bootloader mode | Connect OpenSK to USB port, press the user button for more than 8 seconds and then release the button  |
+| Red LED is flashing | bootloader mode | Flash the firmware |
 | No LED on | Working mode | Idle |
 | R/G/B LED is flashing | Working mode | Wait for user presence when receiving FIDO command |  
 
