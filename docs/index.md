@@ -74,6 +74,7 @@ Press [ENTER] when ready.
     Just press Enter, the firmware will be flahsed to your OpenSK USB Dongle.    
     
     When progress bar reaches 100%, OpenSK USB Dongle will be in working mode automatically. You can now test FIDO function.
-
+!!! note "NOTE"
+    If your dongle can not work well, please refer to https://github.com/google/OpenSK/pull/247 to erase the storage at first and then flash the firmware to try.
 ### Test FIDO functions  
 Please refer to [Test Page](./test.md).  
