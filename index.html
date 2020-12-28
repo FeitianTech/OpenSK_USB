@@ -451,17 +451,18 @@ Please follow the description to change <a href="https://github.com/google/OpenS
 <li>Switch OpenSK to bootloader mode.<br />
 Please refer to <a href=".#opensk-model">OpenSK Model</a> or <a href="hardware/">hardware page</a> to learn how to switch OpenSK to bootloader mode.<br />
 The LEDs show different behaviour in differet mode. Please refer to <a href="hardware/">hardware page</a> to see LED status of OpenSK V1 and V2 .</li>
-<li>
-<p>Program the OpenSK USB dongle.<br />
+<li>Program the OpenSK USB dongle.<br />
 <div class="highlight"><pre><span></span><code>$ ./deploy.py --board=nrf52840_dongle_dfu --opensk --programmer=nordicdfu
 </code></pre></div>
     When prompt <br />
 <div class="highlight"><pre><span></span><code>Press [ENTER] when ready.  
 </code></pre></div>
-    Just press Enter, the firmware will be flahsed to your OpenSK USB Dongle.    </p>
-<p>When progress bar reaches 100%, OpenSK USB Dongle will be in working mode automatically. You can now test FIDO function.</p>
-</li>
+    Just press Enter, the firmware will be flahsed to your OpenSK USB Dongle.    </li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">NOTE</p>
+<p>If your dongle can not work well, please refer to <a href="https://github.com/google/OpenSK/pull/247">https://github.com/google/OpenSK/pull/247</a> to erase the storage at first and then flash the firmware to try.</p>
+</div>
 <h3 id="test-fido-functions">Test FIDO functions<a class="headerlink" href="#test-fido-functions" title="Permanent link">&para;</a></h3>
 <p>Please refer to <a href="test/">Test Page</a>.  </p>
                 
