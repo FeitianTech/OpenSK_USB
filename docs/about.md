@@ -9,3 +9,8 @@
 - Website: https://www.ftsafe.com  
 - Online Store: https://www.ftsafe.com/Store [Other regions]
 - Alibaba Store: https://ftsafe.en.alibaba.com/ [Other regions]
+
+
+##Contact
+email: world.sales@ftsafe.com  
+email: fido@ftsafe.com

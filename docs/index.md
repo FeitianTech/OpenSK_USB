@@ -12,7 +12,7 @@ In that [announcement](https://security.googleblog.com/2020/01/say-hello-to-open
 ```
 The firmware of OpenSK is developed in Rust and it implements both FIDO U2F and FIDO2 [specifications](https://fidoalliance.org/specs/fido2/fido-client-to-authenticator-protocol-v2.1-rd-20191217.html). These specifications are released by [FIDO Alliance](https://fidoalliance.org/ "FIDO Alliance"), which is an open industry association with a focused mission: authentication standards to help reduce the world’s over-reliance on passwords. FEITIAN is the Board Member.
 
-To help and accelerate FIDO security key adoption, FEITIAN improves the housing and makes new designs of OpenSK USB Dongle, removes unused PCB components, public the design. Users can build firmware from the source code of [Google OpenSK github repository](https://github.com/google/opensk "OpenSK") without changing anything, provision it to this OpenSK hardware, to experience and try [FIDO](https://fidoalliance.org/ "FIDO Alliance") authentications.
+To help and accelerate FIDO security key adoption, FEITIAN improves the housing and makes new designs of OpenSK USB Dongle, removes unused PCB components, public the design. Users can build firmware from the source code of [Google OpenSK Github repository](https://github.com/google/opensk "OpenSK") without changing anything, provision it to this OpenSK hardware, to experience and try [FIDO](https://fidoalliance.org/ "FIDO Alliance") authentications.
 
 Before you try to program firmware to OpenSK, please read the original [OpenSK guide](https://github.com/google/OpenSK) at first. The following documents are most like additional remarks.
 
@@ -27,7 +27,7 @@ For detailed information, please refer to the [hardware description page](./hard
 
 ## Programming firmware
 
-### Pre-requisite
+### 1. Pre-requisite
 
 - The OpenSK USB Dongle V1 or V2.  
 Before you program the firmware to OpenSK USB Dongle, you should switch it to bootloader mode. Please refer to the [Hardware Page](./hardware.md) to learn how to switch OpenSK to bootloader mode.
@@ -36,15 +36,15 @@ Before you perform the following operations, please read [OpenSK](https://github
 - Install [nrfutil](https://pypi.org/project/nrfutil/) tool.  
 This tool allows you to directly flash firmware to OpenSK over USB without additional hardware.
 
-### Development Environment and configuration
-1. Prepare a Development environment.  
+### 2. Development Environment and configuration
+- Prepare a Development environment.  
 You should prepare a Development environment by yourself according to [this section](https://github.com/google/OpenSK/blob/master/docs/install.md#software).
-2. Clone [Google OpenSK github repository](https://github.com/google/opensk "OpenSK").  
+- Clone [Google OpenSK Github repository](https://github.com/google/opensk "OpenSK").  
 ```
 $ git clone --recursive https://github.com/google/OpenSK.git
 ```  
 
-3. Initial setup.  
+- Initial setup.  
 If you just cloned this repository, you need to run the following script:  
 
 ``` 
@@ -52,18 +52,25 @@ $ ./setup.sh
 ```  
 For more information, please refer to the [Initial setup](https://github.com/google/OpenSK/blob/master/docs/install.md#initial-setup).  
 
-4. Configure the OpenSK security parameter.  
+- Configure the OpenSK security parameter.  
 Please follow the description to change the [Attestation Certificate](https://github.com/google/OpenSK/blob/master/docs/install.md#replacing-the-certificates) as you want. If you are not familiar with OpenSK and FIDO, we recommend you do not change anything.
 
 
-### Flashing the firmware
+### 3. Flashing the firmware
 
 Although you can download the firmware to our OpenSK V1 and V2 by using J-LINK as described in [OpenSK installation guide](https://github.com/google/OpenSK/blob/master/docs/install.md), we recommend you program the firmware through the USB interface, it is more convenient.  
 
-1. Switch OpenSK to bootloader mode.  
+- Switch OpenSK to bootloader mode.  
 Please refer to [OpenSK Model](./index.md#opensk-model) or [hardware page](./hardware.md) to learn how to switch OpenSK to bootloader mode.  
 The LEDs show different behavior in different mode. Please refer to the [hardware page](./hardware.md) to see LED status of OpenSK V1 and V2.
 2. Program the OpenSK USB dongle.  
+!!! note "NOTE"
+    If your dongle can not work well, please refer to https://github.com/google/OpenSK/pull/247 to erase the storage at first and then flash the firmware to try. (--erase_storage only works in **develop** branch instead of **stable** branch currently)
+    ```
+    ./deploy.py --board=nrf52840_dongle_dfu --erase_storage --programmer=nordicdfu
+    ```
+
+
 ```
 $ ./deploy.py --board=nrf52840_dongle_dfu --opensk --programmer=nordicdfu
 ```  
@@ -71,10 +78,21 @@ $ ./deploy.py --board=nrf52840_dongle_dfu --opensk --programmer=nordicdfu
 ```
 Press [ENTER] when ready.  
 ```  
-    Just press Enter, the firmware will be flashed to your OpenSK USB Dongle.    
-    
-    When the progress bar reaches 100%, OpenSK USB Dongle will be in working mode automatically. You can now test FIDO function.
-!!! note "NOTE"
-    If your dongle can not work well, please refer to https://github.com/google/OpenSK/pull/247 to erase the storage at first and then flash the firmware to try.
+    Just press Enter, the firmware will be flashed to your OpenSK USB Dongle.   
+When the progress bar reaches 100%, OpenSK USB Dongle will be in working mode automatically.   
+   
+Please provision Attestation Certificate and Private Key before you test your OpenSK.
+
+
+### 4. Configure Attestation Certificate and Private Key
+You need to inject the cryptographic material if you enabled batch attestation or CTAP1/U2F compatibility (which is the case by default), otherwise, it can not work well.
+```
+./tools/configure.py \
+    --certificate=crypto_data/opensk_cert.pem \
+    --private-key=crypto_data/opensk.key
+```
+
+Now you can test your OpenSK.
+
 ### Test FIDO functions  
 Please refer to [Test Page](./test.md).  
