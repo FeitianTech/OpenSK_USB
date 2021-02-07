@@ -220,22 +220,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pre-requisite" class="md-nav__link">
-    Pre-requisite
+  <a href="#1-pre-requisite" class="md-nav__link">
+    1. Pre-requisite
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#development-environment-and-configuration" class="md-nav__link">
-    Development Environment and configuration
+  <a href="#2-development-environment-and-configuration" class="md-nav__link">
+    2. Development Environment and configuration
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#flashing-the-firmware" class="md-nav__link">
-    Flashing the firmware
+  <a href="#3-flashing-the-firmware" class="md-nav__link">
+    3. Flashing the firmware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-configure-attestation-certificate-and-private-key" class="md-nav__link">
+    4. Configure Attestation Certificate and Private Key
   </a>
   
 </li>
@@ -349,22 +356,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pre-requisite" class="md-nav__link">
-    Pre-requisite
+  <a href="#1-pre-requisite" class="md-nav__link">
+    1. Pre-requisite
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#development-environment-and-configuration" class="md-nav__link">
-    Development Environment and configuration
+  <a href="#2-development-environment-and-configuration" class="md-nav__link">
+    2. Development Environment and configuration
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#flashing-the-firmware" class="md-nav__link">
-    Flashing the firmware
+  <a href="#3-flashing-the-firmware" class="md-nav__link">
+    3. Flashing the firmware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-configure-attestation-certificate-and-private-key" class="md-nav__link">
+    4. Configure Attestation Certificate and Private Key
   </a>
   
 </li>
@@ -407,7 +421,7 @@
     accelerate security key adoption.
 </code></pre></div>
 The firmware of OpenSK is developed in Rust and it implements both FIDO U2F and FIDO2 <a href="https://fidoalliance.org/specs/fido2/fido-client-to-authenticator-protocol-v2.1-rd-20191217.html">specifications</a>. These specifications are released by <a href="https://fidoalliance.org/" title="FIDO Alliance">FIDO Alliance</a>, which is an open industry association with a focused mission: authentication standards to help reduce the world’s over-reliance on passwords. FEITIAN is the Board Member.</p>
-<p>To help and accelerate FIDO security key adoption, FEITIAN improves the housing and makes new designs of OpenSK USB Dongle, removes unused PCB components, public the design. Users can build firmware from the source code of <a href="https://github.com/google/opensk" title="OpenSK">Google OpenSK github repository</a> without changing anything, provision it to this OpenSK hardware, to experience and try <a href="https://fidoalliance.org/" title="FIDO Alliance">FIDO</a> authentications.</p>
+<p>To help and accelerate FIDO security key adoption, FEITIAN improves the housing and makes new designs of OpenSK USB Dongle, removes unused PCB components, public the design. Users can build firmware from the source code of <a href="https://github.com/google/opensk" title="OpenSK">Google OpenSK Github repository</a> without changing anything, provision it to this OpenSK hardware, to experience and try <a href="https://fidoalliance.org/" title="FIDO Alliance">FIDO</a> authentications.</p>
 <p>Before you try to program firmware to OpenSK, please read the original <a href="https://github.com/google/OpenSK">OpenSK guide</a> at first. The following documents are most like additional remarks.</p>
 <h3 id="opensk-model">OpenSK Model<a class="headerlink" href="#opensk-model" title="Permanent link">&para;</a></h3>
 <p>We have two models of OpenSK USB Dongle, V1 and V2. They are designed according to the <a href="https://www.nordicsemi.com/Software-and-tools/Development-Kits/nRF52840-Dongle">nRF52840 USB dongle</a>, which is used by Google OpenSK firmware. The difference between V1 and V2 is the method to enter bootloader mode.  </p>
@@ -415,7 +429,7 @@ The firmware of OpenSK is developed in Rust and it implements both FIDO U2F and 
 <p>To OpenSK V2, after user connects the device to a computer, he should push and hold on to the user button for more than 8 seconds, then OpenSK will be in bootloader mode.  </p>
 <p>For detailed information, please refer to the <a href="hardware/">hardware description page</a>.</p>
 <h2 id="programming-firmware">Programming firmware<a class="headerlink" href="#programming-firmware" title="Permanent link">&para;</a></h2>
-<h3 id="pre-requisite">Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permanent link">&para;</a></h3>
+<h3 id="1-pre-requisite">1. Pre-requisite<a class="headerlink" href="#1-pre-requisite" title="Permanent link">&para;</a></h3>
 <ul>
 <li>The OpenSK USB Dongle V1 or V2.<br />
 Before you program the firmware to OpenSK USB Dongle, you should switch it to bootloader mode. Please refer to the <a href="hardware/">Hardware Page</a> to learn how to switch OpenSK to bootloader mode.</li>
@@ -424,12 +438,12 @@ Before you perform the following operations, please read <a href="https://github
 <li>Install <a href="https://pypi.org/project/nrfutil/">nrfutil</a> tool.<br />
 This tool allows you to directly flash firmware to OpenSK over USB without additional hardware.</li>
 </ul>
-<h3 id="development-environment-and-configuration">Development Environment and configuration<a class="headerlink" href="#development-environment-and-configuration" title="Permanent link">&para;</a></h3>
-<ol>
+<h3 id="2-development-environment-and-configuration">2. Development Environment and configuration<a class="headerlink" href="#2-development-environment-and-configuration" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Prepare a Development environment.<br />
 You should prepare a Development environment by yourself according to <a href="https://github.com/google/OpenSK/blob/master/docs/install.md#software">this section</a>.</li>
 <li>
-<p>Clone <a href="https://github.com/google/opensk" title="OpenSK">Google OpenSK github repository</a>.<br />
+<p>Clone <a href="https://github.com/google/opensk" title="OpenSK">Google OpenSK Github repository</a>.<br />
 <div class="highlight"><pre><span></span><code>$ git clone --recursive https://github.com/google/OpenSK.git
 </code></pre></div></p>
 </li>
@@ -437,32 +451,37 @@ You should prepare a Development environment by yourself according to <a href="h
 <p>Initial setup.<br />
 If you just cloned this repository, you need to run the following script:  </p>
 </li>
-</ol>
+</ul>
 <p><div class="highlight"><pre><span></span><code>$ ./setup.sh
 </code></pre></div>
 For more information, please refer to the <a href="https://github.com/google/OpenSK/blob/master/docs/install.md#initial-setup">Initial setup</a>.  </p>
-<ol>
+<ul>
 <li>Configure the OpenSK security parameter.<br />
 Please follow the description to change the <a href="https://github.com/google/OpenSK/blob/master/docs/install.md#replacing-the-certificates">Attestation Certificate</a> as you want. If you are not familiar with OpenSK and FIDO, we recommend you do not change anything.</li>
-</ol>
-<h3 id="flashing-the-firmware">Flashing the firmware<a class="headerlink" href="#flashing-the-firmware" title="Permanent link">&para;</a></h3>
+</ul>
+<h3 id="3-flashing-the-firmware">3. Flashing the firmware<a class="headerlink" href="#3-flashing-the-firmware" title="Permanent link">&para;</a></h3>
 <p>Although you can download the firmware to our OpenSK V1 and V2 by using J-LINK as described in <a href="https://github.com/google/OpenSK/blob/master/docs/install.md">OpenSK installation guide</a>, we recommend you program the firmware through the USB interface, it is more convenient.  </p>
-<ol>
-<li>Switch OpenSK to bootloader mode.<br />
-Please refer to <a href=".#opensk-model">OpenSK Model</a> or <a href="hardware/">hardware page</a> to learn how to switch OpenSK to bootloader mode.<br />
-The LEDs show different behavior in different mode. Please refer to the <a href="hardware/">hardware page</a> to see LED status of OpenSK V1 and V2.</li>
-<li>Program the OpenSK USB dongle.<br />
-<div class="highlight"><pre><span></span><code>$ ./deploy.py --board=nrf52840_dongle_dfu --opensk --programmer=nordicdfu
+<div class="admonition note">
+<p class="admonition-title">NOTE</p>
+<p>If your dongle can not work well, please refer to <a href="https://github.com/google/OpenSK/pull/247">https://github.com/google/OpenSK/pull/247</a> to erase the storage at first and then flash the firmware to try. (--erase_storage only works in <strong>develop</strong> branch instead of <strong>stable</strong> branch currently)
+<div class="highlight"><pre><span></span><code>./deploy.py --board=nrf52840_dongle_dfu --erase_storage --programmer=nordicdfu
+</code></pre></div></p>
+</div>
+<p><div class="highlight"><pre><span></span><code>$ ./deploy.py --board=nrf52840_dongle_dfu --opensk --programmer=nordicdfu
 </code></pre></div>
     When prompt <br />
 <div class="highlight"><pre><span></span><code>Press [ENTER] when ready.  
 </code></pre></div>
-    Just press Enter, the firmware will be flashed to your OpenSK USB Dongle.    </li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">NOTE</p>
-<p>If your dongle can not work well, please refer to <a href="https://github.com/google/OpenSK/pull/247">https://github.com/google/OpenSK/pull/247</a> to erase the storage at first and then flash the firmware to try.</p>
-</div>
+    Just press Enter, the firmware will be flashed to your OpenSK USB Dongle. <br />
+When the progress bar reaches 100%, OpenSK USB Dongle will be in working mode automatically.   </p>
+<p>Please provision Attestation Certificate and Private Key before you test your OpenSK.</p>
+<h3 id="4-configure-attestation-certificate-and-private-key">4. Configure Attestation Certificate and Private Key<a class="headerlink" href="#4-configure-attestation-certificate-and-private-key" title="Permanent link">&para;</a></h3>
+<p>You need to inject the cryptographic material if you enabled batch attestation or CTAP1/U2F compatibility (which is the case by default), otherwise, it can not work well.
+<div class="highlight"><pre><span></span><code>./tools/configure.py \
+    --certificate=crypto_data/opensk_cert.pem \
+    --private-key=crypto_data/opensk.key
+</code></pre></div></p>
+<p>Now you can test your OpenSK.</p>
 <h3 id="test-fido-functions">Test FIDO functions<a class="headerlink" href="#test-fido-functions" title="Permanent link">&para;</a></h3>
 <p>Please refer to <a href="test/">Test Page</a>.  </p>
                 
@@ -506,7 +525,7 @@ The LEDs show different behavior in different mode. Please refer to the <a href=
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2020 Feitian Technologies
+            Copyright &copy; 2020-2021 Feitian Technologies
           </div>
         
         Made with
