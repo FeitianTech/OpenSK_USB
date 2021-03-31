@@ -16,6 +16,9 @@ To help and accelerate FIDO security key adoption, FEITIAN improves the housing 
 
 Before you try to program firmware to OpenSK, please read the original [OpenSK guide](https://github.com/google/OpenSK) at first. The following documents are most like additional remarks.
 
+!!! warning "attention"
+    Before you try or buy Feitian OpenSK Dongle, please be sure that you have read the important [caution](./caution.md) message.
+
 ### OpenSK Model
 We have two models of OpenSK USB Dongle, V1 and V2. They are designed according to the [nRF52840 USB dongle](https://www.nordicsemi.com/Software-and-tools/Development-Kits/nRF52840-Dongle), which is used by Google OpenSK firmware. The difference between V1 and V2 is the method to enter bootloader mode.  
 
