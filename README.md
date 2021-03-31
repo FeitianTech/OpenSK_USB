@@ -8,8 +8,7 @@ This site opens all the materials in Feitian OpenSK USB Dongle, include hardware
 
 ### Caution
 
-!!! warning ""
-    You should read the following notes before you try or buy our OpenSK dongle.
+You should read the following notes before you try or buy our OpenSK dongle.
 
 1. Please keep in mind that OpenSK is a research platform, Google hopes it is used by researchers, security key manufacturers, and enthusiasts to help develop innovative features and accelerate security key adoption. Feitian OpenSK dongle is manufactured for researchers or enthusiasts to learn what FIDO is and how it works. It is not intended to be used for the circumstance that needs highest security.  
 
