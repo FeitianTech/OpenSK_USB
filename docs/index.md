@@ -33,7 +33,7 @@ For detailed information, please refer to the [hardware description page](./hard
 ### 1. Pre-requisite
 
 - The OpenSK USB Dongle V1 or V2.  
-Before you program the firmware to OpenSK USB Dongle, you should switch it to bootloader mode. Please refer to the [Hardware Page](./hardware.md) to learn how to switch OpenSK to bootloader mode.
+Before you program the firmware to OpenSK USB Dongle, you should switch it to ^^**==bootloader==**^^ mode. Please refer to the [Hardware Page](./hardware.md) to learn how to switch OpenSK to ^^**==bootloader==**^^ mode. You can check to make sure it is in bootloader according to [this section](./hardware#check-bootloader-mode) .
 - Read the Original OpenSK guide.  
 Before you perform the following operations, please read [OpenSK](https://github.com/google/opensk) and its [installation guide](https://github.com/google/OpenSK/blob/master/docs/install.md) to learn how to customize your security key, for example, to change the signature counter mechanism and Attestation Certificate.
 - Install [nrfutil](https://pypi.org/project/nrfutil/) tool.  
@@ -42,6 +42,7 @@ This tool allows you to directly flash firmware to OpenSK over USB without addit
 ### 2. Development Environment and configuration
 - Prepare a Development environment.  
 You should prepare a Development environment by yourself according to [this section](https://github.com/google/OpenSK/blob/master/docs/install.md#software).
+The scripts provided in this project have been tested under **Linux** and **macOS**. We haven't tested them on Windows and other platforms.
 - Clone [Google OpenSK Github repository](https://github.com/google/opensk "OpenSK").  
 ```
 $ git clone --recursive https://github.com/google/OpenSK.git
@@ -72,6 +73,7 @@ The LEDs show different behavior in different mode. Please refer to the [hardwar
     ```
     ./deploy.py --board=nrf52840_dongle_dfu --erase_storage --programmer=nordicdfu
     ```
+    After this command, you should switch your OpenSK to bootloader mode again to perform following operations.
 
 
 ```

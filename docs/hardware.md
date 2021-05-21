@@ -10,15 +10,16 @@ Currently, only **V2** is available to the market.
 It has a metal housing with only one button in the aft area.  
 
 !!! note "NOTE"
-    The LED and User button are together. The button material is transparent, so user can see LED light through the button.
+    The LED and User button are together. The button material is transparent, so user can see LED light through the button.  
+    Since the LED is behind the button, you have to check it from the **aft area** to find it breathing or flashing.
     
 ### 1. Switch To bootloader mode
-After user connects the device to a computer, **push and hold on** the user button for **more than 8** seconds and then release the button. If the red LED is breathing, OpenSK is in bootloader mode.  
+After user connects the device to a computer, **push and hold on** the user button for ^^**==more than 10 seconds==**^^ and then ^^**==release==**^^ the button. If the red LED is ^^**==breathing==**^^, OpenSK is in bootloader mode.  
 
 ### 2. LED status
 | LED behavior |  Mode type | Trigger Method |
 | :-- | :-- | :-- |
-| Red LED is breathing | bootloader mode | Connect OpenSK to USB port, press the user button for more than 8 seconds and then release the button  |
+| Red LED is ^^**==breathing==**^^ | bootloader mode | Connect OpenSK to USB port, press the user button for more than ^^**==more than 10 seconds==**^^ and then ^^**==release==**^^ the button  |
 | Red LED is flashing | bootloader mode | Flash the firmware |
 | No LED on | Working mode | Idle |
 | R/G/B LED is flashing | Working mode | Wait for user presence when receiving FIDO command |  
@@ -48,3 +49,32 @@ After connecting OpenSK to the USB port, please insert a paper clip or a SIM-eje
 
 ### 3. Hardware
 The hardware schematic and PCB files can be downloaded [here](hardware_files/OpenSK_V1.zip). 
+
+##Check Bootloader Mode
+Sometimes, maybe you don't know whether your OpenSK is in bootloader mode after above operation, you can
+have three ways to check.
+
+###1. LED breathing
+If the ^^**==red==**^^ LED is ^^**==breathing==**^^, OpenSK is in bootloader mode, this is the simplest way.
+
+###2. lsusb command
+On Linux or macOS, just run 
+``` 
+$ lsusb
+```  
+to see the result.  
+(Plesae make sure you have this command installed previously.)  
+
+If there is line similar to below message(1915:521f & Nordic & ^^**==Open DFU Bootloader==**^^)
+```
+Bus 020 Device 026: ID 1915:521f Nordic Semiconductor ASA Open DFU Bootloader  Serial: FFCCAE942A17
+```
+then it is in ^^**==bootloader==**^^ mode.
+Other message line without ^^**==Open DFU Bootloader==**^^ but include 1915:521f and Nordic means it is in normal working mode.
+
+###3. USB Prober.app
+On macOS, if you have USB Prober.app installed, run this app. If you have OpenSK attached and it is in bootloader mode, you should find USB information similar to below picture.
+
+
+<img alt="OpenSK bootloader mode" src="../images/bootloader_opensk.png" width="900px">  
+This means it is in bootloader mode.
