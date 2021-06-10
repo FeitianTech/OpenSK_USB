@@ -37,7 +37,8 @@ Before you program the firmware to OpenSK USB Dongle, you should switch it to ^^
 - Read the Original OpenSK guide.  
 Before you perform the following operations, please read [OpenSK](https://github.com/google/opensk) and its [installation guide](https://github.com/google/OpenSK/blob/master/docs/install.md) to learn how to customize your security key, for example, to change the signature counter mechanism and Attestation Certificate.
 - Install [nrfutil](https://pypi.org/project/nrfutil/) tool.  
-This tool allows you to directly flash firmware to OpenSK over USB without additional hardware.
+This tool allows you to directly flash firmware to OpenSK over USB without additional hardware.  
+Please find right version nrfutil and python. Make sure you have noted that nrfutil 6.x requires: Python >=3.6, <3.9 .
 
 ### 2. Development Environment and configuration
 - Prepare a Development environment.  
