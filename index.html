@@ -9,6 +9,8 @@
       
       
       
+        <link rel="canonical" href="https://feitiantech.github.io/OpenSK_USB/">
+      
       <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.7">
     
@@ -74,7 +76,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="index.html" title="Feitian OpenSK USB Dongle" class="md-header__button md-logo" aria-label="Feitian OpenSK USB Dongle" data-md-component="logo">
+    <a href="." title="Feitian OpenSK USB Dongle" class="md-header__button md-logo" aria-label="Feitian OpenSK USB Dongle" data-md-component="logo">
       
   <img src="images/OpenSK.png" alt="logo">
 
@@ -153,7 +155,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="index.html" title="Feitian OpenSK USB Dongle" class="md-nav__button md-logo" aria-label="Feitian OpenSK USB Dongle" data-md-component="logo">
+    <a href="." title="Feitian OpenSK USB Dongle" class="md-nav__button md-logo" aria-label="Feitian OpenSK USB Dongle" data-md-component="logo">
       
   <img src="images/OpenSK.png" alt="logo">
 
@@ -185,7 +187,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+      <a href="." class="md-nav__link md-nav__link--active">
         Home
       </a>
       
@@ -287,7 +289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="test.html" class="md-nav__link">
+      <a href="test/" class="md-nav__link">
         Test FIDO
       </a>
     </li>
@@ -302,7 +304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="hardware.html" class="md-nav__link">
+      <a href="hardware/" class="md-nav__link">
         Hardware
       </a>
     </li>
@@ -317,7 +319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="about.html" class="md-nav__link">
+      <a href="about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -332,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="caution.html" class="md-nav__link">
+      <a href="caution/" class="md-nav__link">
         Caution
       </a>
     </li>
@@ -459,18 +461,18 @@ The firmware of OpenSK is developed in Rust and it implements both FIDO U2F and 
 <p>Before you try to program firmware to OpenSK, please read the original <a href="https://github.com/google/OpenSK">OpenSK guide</a> at first. The following documents are most like additional remarks.</p>
 <div class="admonition warning">
 <p class="admonition-title">attention</p>
-<p>Before you try or buy Feitian OpenSK Dongle, please be sure that you have read the important <a href="caution.html">caution</a> message.</p>
+<p>Before you try or buy Feitian OpenSK Dongle, please be sure that you have read the important <a href="caution/">caution</a> message.</p>
 </div>
 <h3 id="opensk-model">OpenSK Model<a class="headerlink" href="#opensk-model" title="Permanent link">&para;</a></h3>
 <p>We have two models of OpenSK USB Dongle, V1 and V2. They are designed according to the <a href="https://www.nordicsemi.com/Software-and-tools/Development-Kits/nRF52840-Dongle">nRF52840 USB dongle</a>, which is used by Google OpenSK firmware. The difference between V1 and V2 is the method to enter bootloader mode.  </p>
 <p>To OpenSK V1, user should insert a paper clip or a SIM-eject tool to the RESET button hole to enter bootloader mode. This is similar to user push the RESET button on the nRF52840 USB dongle.  </p>
 <p>To OpenSK V2, after user connects the device to a computer, he should push and hold on to the user button for more than 10 seconds, then OpenSK will be in bootloader mode.  </p>
-<p>For detailed information, please refer to the <a href="hardware.html">hardware description page</a>.</p>
+<p>For detailed information, please refer to the <a href="hardware/">hardware description page</a>.</p>
 <h2 id="programming-firmware">Programming firmware<a class="headerlink" href="#programming-firmware" title="Permanent link">&para;</a></h2>
 <h3 id="1-pre-requisite">1. Pre-requisite<a class="headerlink" href="#1-pre-requisite" title="Permanent link">&para;</a></h3>
 <ul>
 <li>The OpenSK USB Dongle V1 or V2.<br />
-Before you program the firmware to OpenSK USB Dongle, you should switch it to <ins><strong><mark>bootloader</mark></strong></ins> mode. Please refer to the <a href="hardware.html">Hardware Page</a> to learn how to switch OpenSK to <ins><strong><mark>bootloader</mark></strong></ins> mode. You can check to make sure it is in bootloader according to <a href="./hardware#check-bootloader-mode">this section</a> .</li>
+Before you program the firmware to OpenSK USB Dongle, you should switch it to <ins><strong><mark>bootloader</mark></strong></ins> mode. Please refer to the <a href="hardware/">Hardware Page</a> to learn how to switch OpenSK to <ins><strong><mark>bootloader</mark></strong></ins> mode. You can check to make sure it is in bootloader according to <a href="./hardware#check-bootloader-mode">this section</a> .</li>
 <li>Read the Original OpenSK guide.<br />
 Before you perform the following operations, please read <a href="https://github.com/google/opensk">OpenSK</a> and its <a href="https://github.com/google/OpenSK/blob/master/docs/install.md">installation guide</a> to learn how to customize your security key, for example, to change the signature counter mechanism and Attestation Certificate.</li>
 <li>Install <a href="https://pypi.org/project/nrfutil/">nrfutil</a> tool.<br />
@@ -503,8 +505,8 @@ Please follow the description to change the <a href="https://github.com/google/O
 <p>Although you can download the firmware to our OpenSK V1 and V2 by using J-LINK as described in <a href="https://github.com/google/OpenSK/blob/master/docs/install.md">OpenSK installation guide</a>, we recommend you program the firmware through the USB interface, it is more convenient.  </p>
 <ul>
 <li>Switch OpenSK to bootloader mode.<br />
-Please refer to <a href="index.html#opensk-model">OpenSK Model</a> or <a href="hardware.html">hardware page</a> to learn how to switch OpenSK to bootloader mode.<br />
-The LEDs show different behavior in different mode. Please refer to the <a href="hardware.html">hardware page</a> to see LED status of OpenSK V1 and V2.</li>
+Please refer to <a href=".#opensk-model">OpenSK Model</a> or <a href="hardware/">hardware page</a> to learn how to switch OpenSK to bootloader mode.<br />
+The LEDs show different behavior in different mode. Please refer to the <a href="hardware/">hardware page</a> to see LED status of OpenSK V1 and V2.</li>
 <li>Program the OpenSK USB dongle.  </li>
 </ul>
 <div class="admonition note">
@@ -530,7 +532,7 @@ When the progress bar reaches 100%, OpenSK USB Dongle will be in working mode au
 </code></pre></div></p>
 <p>Now you can test your OpenSK.</p>
 <h3 id="test-fido-functions">Test FIDO functions<a class="headerlink" href="#test-fido-functions" title="Permanent link">&para;</a></h3>
-<p>Please refer to <a href="test.html">Test Page</a>.  </p>
+<p>Please refer to <a href="test/">Test Page</a>.  </p>
                 
               
               
@@ -551,7 +553,7 @@ When the progress bar reaches 100%, OpenSK USB Dongle will be in working mode au
       
       
         
-        <a href="test.html" class="md-footer__link md-footer__link--next" aria-label="Next: Test FIDO" rel="next">
+        <a href="test/" class="md-footer__link md-footer__link--next" aria-label="Next: Test FIDO" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
