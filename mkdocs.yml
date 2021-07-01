@@ -1,4 +1,5 @@
 site_name: Feitian OpenSK USB Dongle
+site_url: https://feitiantech.github.io/OpenSK_USB/
 
 theme:
   name: material
