@@ -319,15 +319,35 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-lsusb-command" class="md-nav__link">
-    2. lsusb command
+  <a href="#2-macos" class="md-nav__link">
+    2. macOS
+  </a>
+  
+    <nav class="md-nav" aria-label="2. macOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-libusb-command" class="md-nav__link">
+    2.1. libusb command
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-usb-proberapp" class="md-nav__link">
-    3. USB Prober.app
+  <a href="#22-usb-proberapp" class="md-nav__link">
+    2.2. USB Prober.app
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-linux" class="md-nav__link">
+    2. Linux
   </a>
   
 </li>
@@ -484,15 +504,35 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-lsusb-command" class="md-nav__link">
-    2. lsusb command
+  <a href="#2-macos" class="md-nav__link">
+    2. macOS
+  </a>
+  
+    <nav class="md-nav" aria-label="2. macOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-libusb-command" class="md-nav__link">
+    2.1. libusb command
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-usb-proberapp" class="md-nav__link">
-    3. USB Prober.app
+  <a href="#22-usb-proberapp" class="md-nav__link">
+    2.2. USB Prober.app
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-linux" class="md-nav__link">
+    2. Linux
   </a>
   
 </li>
@@ -612,21 +652,51 @@ Since the LED is behind the button, you have to check it from the <strong>aft ar
 have three ways to check.</p>
 <h3 id="1-led-breathing">1. LED breathing<a class="headerlink" href="#1-led-breathing" title="Permanent link">&para;</a></h3>
 <p>If the <ins><strong><mark>red</mark></strong></ins> LED is <ins><strong><mark>breathing</mark></strong></ins>, OpenSK is in bootloader mode, this is the simplest way.</p>
-<h3 id="2-lsusb-command">2. lsusb command<a class="headerlink" href="#2-lsusb-command" title="Permanent link">&para;</a></h3>
-<p>On Linux or macOS, just run 
+<h3 id="2-macos">2. macOS<a class="headerlink" href="#2-macos" title="Permanent link">&para;</a></h3>
+<h4 id="21-libusb-command">2.1. libusb command<a class="headerlink" href="#21-libusb-command" title="Permanent link">&para;</a></h4>
+<p>On macOS, open <strong>Terminal.app</strong>, run
 <div class="highlight"><pre><span></span><code>$ lsusb
 </code></pre></div>
-to see the result.<br />
-(Plesae make sure you have this command installed previously.)  </p>
-<p>If there is line similar to below message(1915:521f &amp; Nordic &amp; <ins><strong><mark>Open DFU Bootloader</mark></strong></ins>)
-<div class="highlight"><pre><span></span><code>Bus 020 Device 026: ID 1915:521f Nordic Semiconductor ASA Open DFU Bootloader  Serial: FFCCAE942A17
+to check the result. (Plesae make sure you have this command installed previously.)  </p>
+<p>If there is line similar to below message
+<div class="highlight"><pre><span></span><code>Bus XXX Device YYY: ID 1915:521f Nordic Semiconductor ASA <ins class="critic">Open DFU Bootloader</ins>  Serial: FFCCAE942A17
 </code></pre></div>
-then it is in <ins><strong><mark>bootloader</mark></strong></ins> mode.
-Other message line without <ins><strong><mark>Open DFU Bootloader</mark></strong></ins> but include 1915:521f and Nordic means it is in normal working mode.</p>
-<h3 id="3-usb-proberapp">3. USB Prober.app<a class="headerlink" href="#3-usb-proberapp" title="Permanent link">&para;</a></h3>
+then it is in <ins><strong><mark>bootloader</mark></strong></ins> mode.<br />
+If there is line similar to below message
+<div class="highlight"><pre><span></span><code>Bus XXX Device YYY: ID 1915:521f Nordic Semiconductor ASA <ins class="critic">OpenSK</ins>  Serial: v1.0
+</code></pre></div>
+Then it is in <ins><strong><mark>normal working</mark></strong></ins> mode.</p>
+<h4 id="22-usb-proberapp">2.2. USB Prober.app<a class="headerlink" href="#22-usb-proberapp" title="Permanent link">&para;</a></h4>
 <p>On macOS, if you have USB Prober.app installed, run this app. If you have OpenSK attached and it is in bootloader mode, you should find USB information similar to below picture.</p>
 <p><img alt="OpenSK bootloader mode" src="../images/bootloader_opensk.png" width="900px"><br />
 This means it is in bootloader mode.</p>
+<h3 id="2-linux">2. Linux<a class="headerlink" href="#2-linux" title="Permanent link">&para;</a></h3>
+<p>On Linux (e.g., Ubuntu), Open Terminal and run
+<div class="highlight"><pre><span></span><code>$ lsusb
+</code></pre></div>
+No matter your USB dongle is in normal working mode or bootloader mode, the result is always 
+<div class="highlight"><pre><span></span><code>Bus XXX Device YYY: ID 1915:521f Nordic Semiconductor ASA
+</code></pre></div></p>
+<p>Then run 
+<div class="highlight"><pre><span></span><code>$ dmesg 
+</code></pre></div>
+If your USB dongle is in <ins><strong><mark>bootloader</mark></strong></ins> mode, you should find below similar output message:
+<div class="highlight"><pre><span></span><code>[ XXXX.YYYYYY] usb 2-2.8: new full-speed USB device number 24 using uhci_hcd
+[ XXXX.YYYYYY] usb 2-2.8: New USB device found, idVendor=1915, idProduct=521f, bcdDevice= 1.00
+[ XXXX.YYYYYY] usb 2-2.8: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+<span class="hll">[ XXXX.YYYYYY] usb 2-2.8: <ins class="critic">Product: Open DFU Bootloader</ins>
+</span>[ XXXX.YYYYYY] usb 2-2.8: Manufacturer: Nordic Semiconductor
+[ XXXX.YYYYYY] usb 2-2.8: SerialNumber: FFCCAE942A17
+</code></pre></div></p>
+<p>Otherwise, if your USB dongle is in <ins><strong><mark>normal working</mark></strong></ins> mode, the output message should be similar to
+<div class="highlight"><pre><span></span><code>[ XXXX.YYYYYY] usb 2-2.8: new full-speed USB device number 22 using uhci_hcd
+[ XXXX.YYYYYY] usb 2-2.8: New USB device found, idVendor=1915, idProduct=521f, bcdDevice= 0.01
+[ XXXX.YYYYYY] usb 2-2.8: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+<span class="hll">[ XXXX.YYYYYY] usb 2-2.8: <ins class="critic">Product: OpenSK</ins>
+</span>[ XXXX.YYYYYY] usb 2-2.8: Manufacturer: Nordic Semiconductor ASA
+[ XXXX.YYYYYY] usb 2-2.8: SerialNumber: v1.0
+[ XXXX.YYYYYY] hid-generic 0003:1915:521F.0009: hiddev0,hidraw2: USB HID v1.10 Device [Nordic Semiconductor ASA <ins class="critic">OpenSK</ins>] on usb-0000:00:1d.0-2.8/input0
+</code></pre></div></p>
                 
               
               
