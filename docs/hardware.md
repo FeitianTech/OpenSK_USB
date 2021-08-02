@@ -57,24 +57,65 @@ have three ways to check.
 ###1. LED breathing
 If the ^^**==red==**^^ LED is ^^**==breathing==**^^, OpenSK is in bootloader mode, this is the simplest way.
 
-###2. lsusb command
-On Linux or macOS, just run 
+###2. macOS
+
+####2.1. lsusb command
+On macOS, open **Terminal.app**, run
 ``` 
 $ lsusb
 ```  
-to see the result.  
-(Plesae make sure you have this command installed previously.)  
+to check the result. (Plesae make sure you have this command installed previously.)  
 
-If there is line similar to below message(1915:521f & Nordic & ^^**==Open DFU Bootloader==**^^)
+If there is line similar to below message
 ```
-Bus 020 Device 026: ID 1915:521f Nordic Semiconductor ASA Open DFU Bootloader  Serial: FFCCAE942A17
+Bus XXX Device YYY: ID 1915:521f Nordic Semiconductor ASA {++Open DFU Bootloader++}  Serial: FFCCAE942A17
 ```
-then it is in ^^**==bootloader==**^^ mode.
-Other message line without ^^**==Open DFU Bootloader==**^^ but include 1915:521f and Nordic means it is in normal working mode.
+then it is in ^^**==bootloader==**^^ mode.  
+If there is line similar to below message
+```
+Bus XXX Device YYY: ID 1915:521f Nordic Semiconductor ASA {++OpenSK++}  Serial: v1.0
+```
+Then it is in ^^**==normal working==**^^ mode.
 
-###3. USB Prober.app
+####2.2. USB Prober.app
 On macOS, if you have USB Prober.app installed, run this app. If you have OpenSK attached and it is in bootloader mode, you should find USB information similar to below picture.
 
 
 <img alt="OpenSK bootloader mode" src="../images/bootloader_opensk.png" width="900px">  
 This means it is in bootloader mode.
+###2. Linux
+On Linux (e.g., Ubuntu), Open Terminal and run
+```
+$ lsusb
+```
+No matter your USB dongle is in normal working mode or bootloader mode, the result is always 
+```
+Bus XXX Device YYY: ID 1915:521f Nordic Semiconductor ASA
+```
+
+Then run 
+```
+$ dmesg 
+```
+If your USB dongle is in ^^**==bootloader==**^^ mode, you should find below similar output message:
+```hl_lines="4"
+[ XXXX.YYYYYY] usb 2-2.8: new full-speed USB device number 24 using uhci_hcd
+[ XXXX.YYYYYY] usb 2-2.8: New USB device found, idVendor=1915, idProduct=521f, bcdDevice= 1.00
+[ XXXX.YYYYYY] usb 2-2.8: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ XXXX.YYYYYY] usb 2-2.8: {++Product: Open DFU Bootloader++}
+[ XXXX.YYYYYY] usb 2-2.8: Manufacturer: Nordic Semiconductor
+[ XXXX.YYYYYY] usb 2-2.8: SerialNumber: FFCCAE942A17
+```
+
+Otherwise, if your USB dongle is in ^^**==normal working==**^^ mode, the output message should be similar to
+```hl_lines="4"
+[ XXXX.YYYYYY] usb 2-2.8: new full-speed USB device number 22 using uhci_hcd
+[ XXXX.YYYYYY] usb 2-2.8: New USB device found, idVendor=1915, idProduct=521f, bcdDevice= 0.01
+[ XXXX.YYYYYY] usb 2-2.8: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ XXXX.YYYYYY] usb 2-2.8: {++Product: OpenSK++}
+[ XXXX.YYYYYY] usb 2-2.8: Manufacturer: Nordic Semiconductor ASA
+[ XXXX.YYYYYY] usb 2-2.8: SerialNumber: v1.0
+[ XXXX.YYYYYY] hid-generic 0003:1915:521F.0009: hiddev0,hidraw2: USB HID v1.10 Device [Nordic Semiconductor ASA {++OpenSK++}] on usb-0000:00:1d.0-2.8/input0
+```
+!!! note "NOTE"
+    You'd better to use `sudo dmesg -c` command instead of `dmesg` to output latest new added message after you plug in and plug out the USB dongle.
