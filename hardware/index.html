@@ -327,8 +327,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-libusb-command" class="md-nav__link">
-    2.1. libusb command
+  <a href="#21-lsusb-command" class="md-nav__link">
+    2.1. lsusb command
   </a>
   
 </li>
@@ -512,8 +512,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-libusb-command" class="md-nav__link">
-    2.1. libusb command
+  <a href="#21-lsusb-command" class="md-nav__link">
+    2.1. lsusb command
   </a>
   
 </li>
@@ -653,7 +653,7 @@ have three ways to check.</p>
 <h3 id="1-led-breathing">1. LED breathing<a class="headerlink" href="#1-led-breathing" title="Permanent link">&para;</a></h3>
 <p>If the <ins><strong><mark>red</mark></strong></ins> LED is <ins><strong><mark>breathing</mark></strong></ins>, OpenSK is in bootloader mode, this is the simplest way.</p>
 <h3 id="2-macos">2. macOS<a class="headerlink" href="#2-macos" title="Permanent link">&para;</a></h3>
-<h4 id="21-libusb-command">2.1. libusb command<a class="headerlink" href="#21-libusb-command" title="Permanent link">&para;</a></h4>
+<h4 id="21-lsusb-command">2.1. lsusb command<a class="headerlink" href="#21-lsusb-command" title="Permanent link">&para;</a></h4>
 <p>On macOS, open <strong>Terminal.app</strong>, run
 <div class="highlight"><pre><span></span><code>$ lsusb
 </code></pre></div>
@@ -697,6 +697,10 @@ If your USB dongle is in <ins><strong><mark>bootloader</mark></strong></ins> mod
 [ XXXX.YYYYYY] usb 2-2.8: SerialNumber: v1.0
 [ XXXX.YYYYYY] hid-generic 0003:1915:521F.0009: hiddev0,hidraw2: USB HID v1.10 Device [Nordic Semiconductor ASA <ins class="critic">OpenSK</ins>] on usb-0000:00:1d.0-2.8/input0
 </code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">NOTE</p>
+<p>You'd better to use <code>sudo dmesg -c</code> command instead of <code>dmesg</code> to output latest new added message after you plug in and plug out the USB dongle.</p>
+</div>
                 
               
               
