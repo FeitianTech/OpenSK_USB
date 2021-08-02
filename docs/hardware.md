@@ -84,7 +84,9 @@ On macOS, if you have USB Prober.app installed, run this app. If you have OpenSK
 <img alt="OpenSK bootloader mode" src="../images/bootloader_opensk.png" width="900px">  
 This means it is in bootloader mode.
 ###2. Linux
-On Linux (e.g., Ubuntu), Open Terminal and run
+On Linux (e.g., Ubuntu), Open Terminal.  
+After you plug in the USB dongle, or the USB dongle is changed between bootload mode and normal working mode, run `lsusb` on Terminal.
+
 ```
 $ lsusb
 ```
@@ -118,4 +120,4 @@ Otherwise, if your USB dongle is in ^^**==normal working==**^^ mode, the output 
 [ XXXX.YYYYYY] hid-generic 0003:1915:521F.0009: hiddev0,hidraw2: USB HID v1.10 Device [Nordic Semiconductor ASA {++OpenSK++}] on usb-0000:00:1d.0-2.8/input0
 ```
 !!! note "NOTE"
-    You'd better to use `sudo dmesg -c` command instead of `dmesg` to output latest new added message after you plug in and plug out the USB dongle.
+    You'd better use `sudo dmesg -c` command instead of `dmesg` to output latest new added message.
