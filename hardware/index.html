@@ -671,8 +671,9 @@ Then it is in <ins><strong><mark>normal working</mark></strong></ins> mode.</p>
 <p><img alt="OpenSK bootloader mode" src="../images/bootloader_opensk.png" width="900px"><br />
 This means it is in bootloader mode.</p>
 <h3 id="2-linux">2. Linux<a class="headerlink" href="#2-linux" title="Permanent link">&para;</a></h3>
-<p>On Linux (e.g., Ubuntu), Open Terminal and run
-<div class="highlight"><pre><span></span><code>$ lsusb
+<p>On Linux (e.g., Ubuntu), Open Terminal.<br />
+After you plug in the USB dongle, or the USB dongle is changed between bootload mode and normal working mode, run <code>lsusb</code> on Terminal.</p>
+<p><div class="highlight"><pre><span></span><code>$ lsusb
 </code></pre></div>
 No matter your USB dongle is in normal working mode or bootloader mode, the result is always 
 <div class="highlight"><pre><span></span><code>Bus XXX Device YYY: ID 1915:521f Nordic Semiconductor ASA
@@ -699,7 +700,7 @@ If your USB dongle is in <ins><strong><mark>bootloader</mark></strong></ins> mod
 </code></pre></div></p>
 <div class="admonition note">
 <p class="admonition-title">NOTE</p>
-<p>You'd better to use <code>sudo dmesg -c</code> command instead of <code>dmesg</code> to output latest new added message after you plug in and plug out the USB dongle.</p>
+<p>You'd better use <code>sudo dmesg -c</code> command instead of <code>dmesg</code> to output latest new added message.</p>
 </div>
                 
               
