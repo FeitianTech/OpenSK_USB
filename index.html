@@ -475,9 +475,15 @@ The firmware of OpenSK is developed in Rust and it implements both FIDO U2F and 
 Before you program the firmware to OpenSK USB Dongle, you should switch it to <ins><strong><mark>bootloader</mark></strong></ins> mode. Please refer to the <a href="hardware/">Hardware Page</a> to learn how to switch OpenSK to <ins><strong><mark>bootloader</mark></strong></ins> mode. You can check to make sure it is in bootloader according to <a href="./hardware#check-bootloader-mode">this section</a> .</li>
 <li>Read the Original OpenSK guide.<br />
 Before you perform the following operations, please read <a href="https://github.com/google/opensk">OpenSK</a> and its <a href="https://github.com/google/OpenSK/blob/master/docs/install.md">installation guide</a> to learn how to customize your security key, for example, to change the signature counter mechanism and Attestation Certificate.</li>
-<li>Install <a href="https://pypi.org/project/nrfutil/">nrfutil</a> tool.<br />
+<li>Install <a href="https://pypi.org/project/nrfutil/">nrfutil</a> tool. (<code>sudo pip3 install nrfutil</code> or <code>sudo pip3 install nrfutil --user</code>)<br />
 This tool allows you to directly flash firmware to OpenSK over USB without additional hardware.<br />
-Please find right version nrfutil and python. Make sure you have noted that nrfutil 6.x requires: Python &gt;=3.6, &lt;3.9 .</li>
+Please find right version nrfutil and python. Make sure you have noted that nrfutil 6.x requires: Python <mark>&gt;=3.6, &lt;3.9</mark> .</li>
+<li>Apply udev rule (Linux only).<br />
+If you are using Linux, you should add a udev rule to make OpenSK work well with FIDO applications and browsers.
+<div class="highlight"><pre><span></span><code>sudo cp rules.d/55-opensk.rules /etc/udev/rules.d/
+sudo udevadm control --reload
+</code></pre></div>
+Then unplug and replug the key for the rule to trigger.</li>
 </ul>
 <h3 id="2-development-environment-and-configuration">2. Development Environment and configuration<a class="headerlink" href="#2-development-environment-and-configuration" title="Permanent link">&para;</a></h3>
 <ul>
@@ -511,18 +517,23 @@ The LEDs show different behavior in different mode. Please refer to the <a href=
 </ul>
 <div class="admonition note">
 <p class="admonition-title">NOTE</p>
-<p>If your dongle can not work well, please refer to <a href="https://github.com/google/OpenSK/pull/247">https://github.com/google/OpenSK/pull/247</a> to erase the storage at first and then flash the firmware to try. (--erase_storage only works in <strong>develop</strong> branch instead of <strong>stable</strong> branch currently)
-<div class="highlight"><pre><span></span><code>./deploy.py --board=nrf52840_dongle_dfu --erase_storage --programmer=nordicdfu
+<p>If your USB dongle can not work well, you can erase the storage at first.
+<div class="highlight"><pre><span></span><code>./deploy.py --board=nrf52840_dongle_dfu --programmer=nordicdfu --erase_storage
 </code></pre></div>
 After this command, you should switch your OpenSK to bootloader mode again to perform following operations.</p>
 </div>
-<p><div class="highlight"><pre><span></span><code>$ ./deploy.py --board=nrf52840_dongle_dfu --opensk --programmer=nordicdfu
+<p><div class="highlight"><pre><span></span><code>$ ./deploy.py --board=nrf52840_dongle_dfu --programmer=nordicdfu --opensk
 </code></pre></div>
     When prompt <br />
 <div class="highlight"><pre><span></span><code>Press [ENTER] when ready.  
 </code></pre></div>
     Just press Enter, the firmware will be flashed to your OpenSK USB Dongle. <br />
 When the progress bar reaches 100%, OpenSK USB Dongle will be in working mode automatically.   </p>
+<div class="admonition note">
+<p class="admonition-title">Linux</p>
+<p>If <code>deploy.py</code> returns error "<mark>Permission denied: /dev/ttyxxxx</mark>", <br />
+please change access permission of this device <code>sudo chmod 666 /dev/ttyxxxx</code></p>
+</div>
 <p>Please provision Attestation Certificate and Private Key before you test your OpenSK.</p>
 <h3 id="4-configure-attestation-certificate-and-private-key">4. Configure Attestation Certificate and Private Key<a class="headerlink" href="#4-configure-attestation-certificate-and-private-key" title="Permanent link">&para;</a></h3>
 <p>You need to inject the cryptographic material if you enabled batch attestation or CTAP1/U2F compatibility (which is the case by default), otherwise, it can not work well.
