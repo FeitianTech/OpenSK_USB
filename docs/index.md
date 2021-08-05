@@ -36,9 +36,16 @@ For detailed information, please refer to the [hardware description page](./hard
 Before you program the firmware to OpenSK USB Dongle, you should switch it to ^^**==bootloader==**^^ mode. Please refer to the [Hardware Page](./hardware.md) to learn how to switch OpenSK to ^^**==bootloader==**^^ mode. You can check to make sure it is in bootloader according to [this section](./hardware#check-bootloader-mode) .
 - Read the Original OpenSK guide.  
 Before you perform the following operations, please read [OpenSK](https://github.com/google/opensk) and its [installation guide](https://github.com/google/OpenSK/blob/master/docs/install.md) to learn how to customize your security key, for example, to change the signature counter mechanism and Attestation Certificate.
-- Install [nrfutil](https://pypi.org/project/nrfutil/) tool.  
+- Install [nrfutil](https://pypi.org/project/nrfutil/) tool. (```sudo pip3 install nrfutil``` or ```sudo pip3 install nrfutil --user```)  
 This tool allows you to directly flash firmware to OpenSK over USB without additional hardware.  
-Please find right version nrfutil and python. Make sure you have noted that nrfutil 6.x requires: Python >=3.6, <3.9 .
+Please find right version nrfutil and python. Make sure you have noted that nrfutil 6.x requires: Python ==>=3.6, <3.9== .
+- Apply udev rule (Linux only).  
+If you are using Linux, you should add a udev rule to make OpenSK work well with FIDO applications and browsers.
+```
+sudo cp rules.d/55-opensk.rules /etc/udev/rules.d/
+sudo udevadm control --reload
+```
+Then unplug and replug the key for the rule to trigger.
 
 ### 2. Development Environment and configuration
 - Prepare a Development environment.  
@@ -70,15 +77,15 @@ Please refer to [OpenSK Model](./index.md#opensk-model) or [hardware page](./har
 The LEDs show different behavior in different mode. Please refer to the [hardware page](./hardware.md) to see LED status of OpenSK V1 and V2.
 2. Program the OpenSK USB dongle.  
 !!! note "NOTE"
-    If your dongle can not work well, please refer to https://github.com/google/OpenSK/pull/247 to erase the storage at first and then flash the firmware to try. (--erase_storage only works in **develop** branch instead of **stable** branch currently)
+    If your USB dongle can not work well, you can erase the storage at first.
     ```
-    ./deploy.py --board=nrf52840_dongle_dfu --erase_storage --programmer=nordicdfu
+    ./deploy.py --board=nrf52840_dongle_dfu --programmer=nordicdfu --erase_storage
     ```
     After this command, you should switch your OpenSK to bootloader mode again to perform following operations.
 
 
 ```
-$ ./deploy.py --board=nrf52840_dongle_dfu --opensk --programmer=nordicdfu
+$ ./deploy.py --board=nrf52840_dongle_dfu --programmer=nordicdfu --opensk
 ```  
     When prompt   
 ```
@@ -86,7 +93,12 @@ Press [ENTER] when ready.
 ```  
     Just press Enter, the firmware will be flashed to your OpenSK USB Dongle.   
 When the progress bar reaches 100%, OpenSK USB Dongle will be in working mode automatically.   
-   
+
+!!! note "Linux"
+    If ```deploy.py``` returns error "==Permission denied: /dev/ttyxxxx==",   
+    please change access permission of this device ```sudo chmod 666 /dev/ttyxxxx```
+
+
 Please provision Attestation Certificate and Private Key before you test your OpenSK.
 
 
