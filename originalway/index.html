@@ -9,14 +9,14 @@
       
       
       
-        <link rel="canonical" href="https://feitiantech.github.io/OpenSK_USB/caution/">
+        <link rel="canonical" href="https://feitiantech.github.io/OpenSK_USB/originalway/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.7">
     
     
       
-        <title>Caution - Feitian OpenSK USB Dongle</title>
+        <title>Command Line Tool - Feitian OpenSK USB Dongle</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#caution" class="md-skip">
+        <a href="#official-way-command-line-tool" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Caution
+              Command Line Tool
             
           </span>
         </div>
@@ -186,12 +186,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         Update Firmware
@@ -219,11 +221,92 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../originalway/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Command Line Tool
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Command Line Tool
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    Background
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisite" class="md-nav__link">
+    Pre-requisite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firmware-build-and-update" class="md-nav__link">
+    Firmware build and update
+  </a>
+  
+    <nav class="md-nav" aria-label="Firmware build and update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-build-firmware" class="md-nav__link">
+    1. Build firmware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-flash-firmware" class="md-nav__link">
+    2. Flash firmware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-configure-attestation-certificate-and-private-key" class="md-nav__link">
+    3. Configure Attestation Certificate and Private Key
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -297,51 +380,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Caution
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../caution/" class="md-nav__link">
         Caution
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -372,9 +415,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    
+  <a href="#background" class="md-nav__link">
+    Background
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisite" class="md-nav__link">
+    Pre-requisite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firmware-build-and-update" class="md-nav__link">
+    Firmware build and update
+  </a>
+  
+    <nav class="md-nav" aria-label="Firmware build and update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-build-firmware" class="md-nav__link">
+    1. Build firmware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-flash-firmware" class="md-nav__link">
+    2. Flash firmware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-configure-attestation-certificate-and-private-key" class="md-nav__link">
+    3. Configure Attestation Certificate and Private Key
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -391,22 +475,90 @@
               
                 
                 
-                <h1 id="caution">Caution<a class="headerlink" href="#caution" title="Permanent link">&para;</a></h1>
-<div class="admonition warning">
-<p>You should read the following notes before you try or buy our OpenSK dongle.</p>
+                <h1 id="official-way-command-line-tool">Official Way -- Command Line Tool<a class="headerlink" href="#official-way-command-line-tool" title="Permanent link">&para;</a></h1>
+<h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
+<p>This way is mentioned officially by <a href="https://github.com/google/opensk">Google OpenSK GitHub pages</a> and <a href="https://github.com/google/OpenSK/blob/stable/docs/install.md">installation guide</a>.
+Before you try to program firmware to OpenSK, please read the original <a href="https://github.com/google/OpenSK">OpenSK guide</a> at first.<br />
+By using this way, you should install develop environment, such as python, rust, nrfutil, openssl and etc, clone the source code and build the project. Then use command line to download the firmware.<br />
+The following documents are most like additional remarks.</p>
+<h2 id="pre-requisite">Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The OpenSK USB Dongle V1 or V2.<br />
+During the programming, you may need to switch OpenSK USB Dongle to <ins><strong><mark>bootloader</mark></strong></ins> mode. Please refer to the <a href="../hardware/">Hardware Page</a> to learn how to switch OpenSK to <ins><strong><mark>bootloader</mark></strong></ins> mode. You can check to make sure it is in bootloader according to <a href="./hardware#check-bootloader-mode">this section</a> .</li>
+<li>Read the Original OpenSK guide.<br />
+Before you perform the following operations, please read original <a href="https://github.com/google/opensk">OpenSK</a> and its <a href="https://github.com/google/OpenSK/blob/master/docs/install.md">installation guide</a> to learn how to customize your security key, for example, to change the signature counter mechanism and Attestation Certificate.</li>
+<li>Install <a href="https://pypi.org/project/nrfutil/">nrfutil</a> tool. (<code>sudo pip3 install nrfutil</code> or <code>sudo pip3 install nrfutil --user</code>)<br />
+This tool allows you to directly flash firmware to OpenSK over USB without additional hardware.<br />
+Please find right version nrfutil and python. Make sure you have noted that nrfutil 6.x requires: Python <mark>&gt;=3.6, &lt;3.9</mark> .</li>
+<li>
+<p>Apply udev rule (Linux only).<br />
+If you are using Linux, you should add a udev rule to make OpenSK work well with FIDO applications and browsers.
+<div class="highlight"><pre><span></span><code>sudo cp rules.d/55-opensk.rules /etc/udev/rules.d/
+sudo udevadm control --reload
+</code></pre></div>
+Then unplug and replug the key for the rule to trigger.</p>
+</li>
+<li>
+<p>Development Environment and configuration<br />
+You should prepare a Development environment by yourself according to <a href="https://github.com/google/OpenSK/blob/master/docs/install.md#software">this section</a>.</p>
+</li>
+</ul>
+<h2 id="firmware-build-and-update">Firmware build and update<a class="headerlink" href="#firmware-build-and-update" title="Permanent link">&para;</a></h2>
+<h3 id="1-build-firmware">1. Build firmware<a class="headerlink" href="#1-build-firmware" title="Permanent link">&para;</a></h3>
+<p>The command and scripts showed below have been tested on <strong>Linux</strong> and <strong>macOS</strong>. We haven't tested them on Windows and other platforms.  </p>
+<ul>
+<li>
+<p>Clone <a href="https://github.com/google/opensk" title="OpenSK">Google OpenSK Github repository</a>.<br />
+<div class="highlight"><pre><span></span><code>$ git clone --recursive https://github.com/google/OpenSK.git
+</code></pre></div></p>
+</li>
+<li>
+<p>Initial setup.<br />
+If you just cloned this repository, you need to run the following script:<br />
+<div class="highlight"><pre><span></span><code>$ ./setup.sh
+</code></pre></div>
+For more information, please refer to the <a href="https://github.com/google/OpenSK/blob/master/docs/install.md#initial-setup">Initial setup</a>.  </p>
+</li>
+<li>
+<p>Configure the OpenSK security parameter.<br />
+Please follow the description to change the <a href="https://github.com/google/OpenSK/blob/master/docs/install.md#replacing-the-certificates">Attestation Certificate</a> as you want. If you are not familiar with OpenSK and FIDO, we recommend you do not change anything.</p>
+</li>
+</ul>
+<h3 id="2-flash-firmware">2. Flash firmware<a class="headerlink" href="#2-flash-firmware" title="Permanent link">&para;</a></h3>
+<p>Although you can download the firmware to our OpenSK V1 and V2 by using J-LINK as described in <a href="https://github.com/google/OpenSK/blob/master/docs/install.md">OpenSK installation guide</a>, we recommend you program the firmware through the USB interface, it is more convenient.  </p>
+<ul>
+<li>Switch OpenSK to bootloader mode.<br />
+Please refer to <a href="..#opensk-model">OpenSK Model</a> or <a href="../hardware/">hardware page</a> to learn how to switch OpenSK to bootloader mode.<br />
+The LEDs show different behavior in different mode. Please refer to the <a href="../hardware/">hardware page</a> to see LED status of OpenSK V1 and V2.</li>
+<li>Program the OpenSK USB dongle.  </li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">NOTE</p>
+<p>If your USB dongle can not work well, you can erase the storage at first.
+<div class="highlight"><pre><span></span><code>./deploy.py --board=nrf52840_dongle_dfu --programmer=nordicdfu --erase_storage
+</code></pre></div>
+After this command, you should switch your OpenSK to bootloader mode again to perform following operations.</p>
 </div>
-<ol>
-<li>
-<p>Please keep in mind that OpenSK is a research platform, Google hopes it is used by researchers, security key manufacturers, and enthusiasts to help develop innovative features and accelerate security key adoption. Feitian OpenSK dongle is manufactured for researchers or enthusiasts to learn what FIDO is and how it works. It is not intended to be used for the circumstance that needs highest security.  </p>
-</li>
-<li>
-<p>The core nRF52840 chip is just a <strong>microcontroller</strong> instead of a <strong>secure element</strong>, so this OpenSK dongle may not resist some advanced hardware and physical attacks. It is not much safe to protect your personal online account and secret data as other Feitian FIDO security keys can do. So if you are a government officer, journalist, activist, or someone else at risk of targeted online attacks and need deeply secure protection, we recommend you to use our commercial <a href="https://www.ftsafe.com/Products/FIDO">Feitian FIDO security keys</a>.  </p>
-</li>
-<li>
-<p>Except for some advanced hardware and physical attacks, OpenSK is still a better choice to protect your online account remotely. If you want to use it to protect your personal data, please keep it safe and do not provide it to any other one wittingly or involuntarily.  </p>
-</li>
-</ol>
-<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><div class="highlight"><pre><span></span><code>$ ./deploy.py --board=nrf52840_dongle_dfu --programmer=nordicdfu --opensk
+</code></pre></div>
+    When prompt <br />
+<div class="highlight"><pre><span></span><code>Press [ENTER] when ready.  
+</code></pre></div>
+    Just press Enter, the firmware will be flashed to your OpenSK USB Dongle. <br />
+When the progress bar reaches 100%, OpenSK USB Dongle will be in working mode automatically.   </p>
+<div class="admonition note">
+<p class="admonition-title">Linux</p>
+<p>If <code>deploy.py</code> returns error "<mark>Permission denied: /dev/ttyxxxx</mark>", <br />
+please change access permission of this device <code>sudo chmod 666 /dev/ttyxxxx</code></p>
+</div>
+<p>Please provision Attestation Certificate and Private Key before you test your OpenSK.</p>
+<h3 id="3-configure-attestation-certificate-and-private-key">3. Configure Attestation Certificate and Private Key<a class="headerlink" href="#3-configure-attestation-certificate-and-private-key" title="Permanent link">&para;</a></h3>
+<p>You need to inject the cryptographic material if you enabled batch attestation or CTAP1/U2F compatibility (which is the case by default), otherwise, it can not work well.
+<div class="highlight"><pre><span></span><code>./tools/configure.py \
+    --certificate=crypto_data/opensk_cert.pem \
+    --private-key=crypto_data/opensk.key
+</code></pre></div></p>
+<p>Now you can test your OpenSK according to <a href="../test/">Test Page</a>.  </p>
                 
               
               
@@ -426,7 +578,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../about/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Contact" rel="prev">
+        <a href="../update/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -435,11 +587,26 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Contact
+              Overview
             </div>
           </div>
         </a>
       
+      
+        
+        <a href="../feitianguiway/" class="md-footer__link md-footer__link--next" aria-label="Next: Feitian GUI Tool" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Feitian GUI Tool
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
