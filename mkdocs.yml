@@ -46,9 +46,13 @@ markdown_extensions:
   - pymdownx.tilde
 
 nav:
-  - Home: 'index.md'
+  - About OpenSK: 'index.md'
+  - Update Firmware: 
+    - Overview: "update.md"
+    - Command Line Tool: "originalway.md"
+    - Feitian GUI Tool: "feitianguiway.md"
   - Test FIDO: 'test.md'
-  - Hardware: 'hardware.md'
-  - About: 'about.md'
+  - Hardware Type: 'hardware.md'
+  - Contact: 'about.md'
   - Caution: 'caution.md'
 copyright: Copyright &copy; 2020-2021 Feitian Technologies
