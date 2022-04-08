@@ -510,8 +510,13 @@ Feitian will build the firmware from official <a href="https://github.com/google
 Please refer to <a href="../hardware/">hardware description page</a> to learn how to switch the OpenSK USB dongle to bootloader mode.</p>
 <h3 id="1-download-tool-and-files">1. Download tool and files<a class="headerlink" href="#1-download-tool-and-files" title="Permanent link">&para;</a></h3>
 <p>You can download the tool and from <a href="https://github.com/FeitianTech/OpenSKUpdateTool/releases" title="OpenSK Update Tool">OpenSK Update Tool Github Repository</a> .<br />
-You can download firmware and attestation cryptographic material from <a href="https://github.com/FeitianTech/OpenSK/releases" title="OpenSK Firmware">Feitian OpenSK Repository</a>.<br />
-After you download the firmware and attestation cryptographic material, put them into the same directory of this update tool like below picture showed.  </p>
+You can download firmware and attestation cryptographic material from <a href="https://github.com/FeitianTech/OpenSK/releases" title="OpenSK Firmware">Feitian OpenSK Repository</a>.  </p>
+<div class="admonition note">
+<p class="admonition-title">NOTE</p>
+<p>The crypto materials downloaded here were pre-generated just to show how to use the firmware update tool. To keep the hardware security and privacy, OpenSK dongle sold publicly uses different crypto materials.<br />
+You can generate your own crypto materials.</p>
+</div>
+<p>After you download the firmware and attestation cryptographic material, put them into the same directory of this update tool like below picture showed.  </p>
 <p><img alt="File Locations" src="../images/filelocations.png" width="400px"></p>
 <h3 id="2-launch-update-tool">2. Launch Update Tool<a class="headerlink" href="#2-launch-update-tool" title="Permanent link">&para;</a></h3>
 <p>Insert your OpenSK USB Dongle to your USB port, no matter whether it is in Bootloader mode or not.
