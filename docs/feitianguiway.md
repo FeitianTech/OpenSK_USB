@@ -13,9 +13,14 @@ Please refer to [hardware description page](./hardware.md) to learn how to switc
 ### 1. Download tool and files
 You can download the tool and from [OpenSK Update Tool Github Repository](https://github.com/FeitianTech/OpenSKUpdateTool/releases "OpenSK Update Tool") .  
 You can download firmware and attestation cryptographic material from [Feitian OpenSK Repository](https://github.com/FeitianTech/OpenSK/releases "OpenSK Firmware").  
+!!! note "NOTE"
+	The crypto materials downloaded here were pre-generated just to show how to use the firmware update tool. To keep the hardware security and privacy, OpenSK dongle sold publicly uses different crypto materials.  
+	You can generate your own crypto materials.
 After you download the firmware and attestation cryptographic material, put them into the same directory of this update tool like below picture showed.  
 
 <img alt="File Locations" src="../images/filelocations.png" width="400px">
+
+
 ### 2. Launch Update Tool
 Insert your OpenSK USB Dongle to your USB port, no matter whether it is in Bootloader mode or not.
 Launch this tool, it shows as below picture.  
