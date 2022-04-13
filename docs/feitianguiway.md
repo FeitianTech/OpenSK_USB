@@ -15,7 +15,7 @@ You can download the tool and from [OpenSK Update Tool Github Repository](https:
 You can download firmware and attestation cryptographic material from [Feitian OpenSK Repository](https://github.com/FeitianTech/OpenSK/releases "OpenSK Firmware").  
 !!! note "NOTE"
 	The crypto materials downloaded here were pre-generated just to show how to use the firmware update tool. To keep the hardware security and privacy, OpenSK dongle sold publicly uses different crypto materials.  
-	You can generate your own crypto materials.
+	You can generate your own crypto materials (for example, use [XCA](https://hohnstaedt.de/xca/ "XCA") tool).
 After you download the firmware and attestation cryptographic material, put them into the same directory of this update tool like below picture showed.  
 
 <img alt="File Locations" src="../images/filelocations.png" width="400px">
