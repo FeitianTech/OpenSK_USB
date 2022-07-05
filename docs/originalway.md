@@ -86,5 +86,7 @@ You need to inject the cryptographic material if you enabled batch attestation o
     --certificate=crypto_data/opensk_cert.pem \
     --private-key=crypto_data/opensk.key
 ```
-
+!!! warning "WARNING"
+    When you add a security to Google services, you may encount problem because OpenSK uses self attestation. So plesae click "Skip" when Chrome prompts "allow this site to see your security key? google.com wants to see the make and model of your security key."
+    
 Now you can test your OpenSK according to [Test Page](./test.md).  

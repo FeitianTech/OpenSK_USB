@@ -38,6 +38,8 @@ Here just emphasize services from two big FIDO players, Google and Microsoft.
 
 #### - Google Advanced Protection  
 - Please refer to [landing page](https://landing.google.com/advancedprotection/) or [help page](https://support.google.com/accounts/answer/7519408?co=GENIE.Platform%3DAndroid&hl=en&oco=0) of Google Advanced Protection to get how to setup.  
+!!! warning "WARNING"
+    When you add a security to Google services, you may encount problem because OpenSK uses self attestation. So plesae click "Skip" when Chrome prompts "allow this site to see your security key? google.com wants to see the make and model of your security key."
 
 ### Microsoft
 #### Microsoft Account Passwordless Logon
